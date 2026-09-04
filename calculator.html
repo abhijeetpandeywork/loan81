@@ -7,7 +7,9 @@
   <meta name="description" content="Calculate your loan EMI, total interest, and full repayment schedule in seconds. Free interactive loan calculator by Loan81 for personal loans, business loans, and home loans.">
   <link rel="canonical" href="https://www.loan81.com/calculator.html">
 
-  <meta name="theme-color" content="#0052ff">
+  <meta name="theme-color" content="#0E2954">
+  <link rel="icon" type="image/png" href="assets/images/favicon-81.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon-81.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -50,9 +52,8 @@
   <header class="main-header">
     <div class="container">
       <div class="header-inner">
-        <a href="index.html" class="brand-logo">
-          <div class="brand-logo-icon">81</div>
-          <span>Loan<span class="highlight">81</span></span>
+        <a href="index.html" class="brand-logo" title="Loan81 - Making the Loan Journey Simpler">
+          <img src="assets/images/logo.png" alt="Loan81 Logo" class="site-logo">
         </a>
 
         <nav class="nav-menu">
@@ -149,6 +150,18 @@
                 <div class="summary-emi-hero">
                   <div class="label">Estimated Monthly EMI</div>
                   <div id="summaryMonthlyEmi" class="amount">₹16,490</div>
+                </div>
+
+                <!-- Dynamic EMI Ratio Visual Bar -->
+                <div class="emi-visual-box">
+                  <div class="emi-bar-track">
+                    <div id="emiBarPrincipal" class="emi-bar-principal" style="width: 84.2%;" title="Principal: 84%"></div>
+                    <div id="emiBarInterest" class="emi-bar-interest" style="width: 15.8%;" title="Interest: 16%"></div>
+                  </div>
+                  <div class="emi-legend-row">
+                    <span class="emi-legend-item"><span class="emi-legend-dot principal"></span> Principal (Loan)</span>
+                    <span class="emi-legend-item"><span class="emi-legend-dot interest"></span> Total Interest</span>
+                  </div>
                 </div>
 
                 <div class="summary-item">
@@ -265,9 +278,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col footer-about">
-          <a href="index.html" class="brand-logo" style="color: var(--color-white);">
-            <div class="brand-logo-icon">81</div>
-            <span>Loan<span class="highlight">81</span></span>
+          <a href="index.html" class="brand-logo" title="Loan81 Home">
+            <img src="assets/images/logo-white.png" alt="Loan81 Logo" class="footer-logo">
           </a>
           <p>Loan81 is an independent loan advisory platform committed to transparent, customer-first financial guidance.</p>
           <div class="social-links" style="margin-top: 18px;">

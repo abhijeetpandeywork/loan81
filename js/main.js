@@ -150,6 +150,18 @@ function initEmiCalculator() {
     if (summaryPrincipal) summaryPrincipal.textContent = '₹' + formatIndianCurrency(Math.round(P));
     if (summaryInterest) summaryInterest.textContent = '₹' + formatIndianCurrency(Math.round(totalInterest));
     if (summaryTotalPayable) summaryTotalPayable.textContent = '₹' + formatIndianCurrency(Math.round(totalPayable));
+
+    // Dynamic visual ratio bar
+    const barPrincipal = document.getElementById('emiBarPrincipal');
+    const barInterest = document.getElementById('emiBarInterest');
+    if (barPrincipal && barInterest && totalPayable > 0) {
+      const pPct = Math.max(10, Math.min(90, (P / totalPayable) * 100));
+      const iPct = 100 - pPct;
+      barPrincipal.style.width = pPct.toFixed(1) + '%';
+      barInterest.style.width = iPct.toFixed(1) + '%';
+      barPrincipal.title = 'Principal: ' + pPct.toFixed(0) + '%';
+      barInterest.title = 'Interest: ' + iPct.toFixed(0) + '%';
+    }
   }
 
   if (monthlyAmount && monthlyRate && monthlyTenure) {

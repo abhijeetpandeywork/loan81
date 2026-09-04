@@ -15,7 +15,9 @@
   <meta property="og:description" content="Explore and compare suitable loan options with expert guidance. We are advisors, not lenders. Zero confusion, maximum clarity.">
 
   <!-- Favicon / Theme -->
-  <meta name="theme-color" content="#0052ff">
+  <link rel="icon" type="image/png" href="assets/images/favicon-81.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon-81.png">
+  <meta name="theme-color" content="#0E2954">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,9 +70,8 @@
   <header class="main-header">
     <div class="container">
       <div class="header-inner">
-        <a href="index.html" class="brand-logo">
-          <div class="brand-logo-icon">81</div>
-          <span>Loan<span class="highlight">81</span></span>
+        <a href="index.html" class="brand-logo" title="Loan81 - Making the Loan Journey Simpler">
+          <img src="assets/images/logo.png" alt="Loan81 Logo" class="site-logo">
         </a>
 
         <!-- Desktop Navigation -->
@@ -110,10 +111,10 @@
         <div class="hero-content">
           <div class="hero-badge-row">
             <span class="hero-pill">
-              <span class="dot"></span> 100% Free Advisory & Assistance
+              <span class="dot"></span> Official Loan Advisory & Assistance
             </span>
-            <span class="hero-pill" style="color: var(--color-primary-blue);">
-              <i class="fa-solid fa-shield-check"></i> 20+ Partner Banks & NBFCs
+            <span class="hero-pill" style="color: var(--color-primary-blue); background: var(--color-primary-light);">
+              <i class="fa-solid fa-shield-check" style="color: var(--color-teal-accent);"></i> 40+ Partner Banks & NBFCs
             </span>
           </div>
 
@@ -122,7 +123,7 @@
           </h1>
 
           <p class="hero-desc">
-            Confused by complicated bank criteria, fluctuating interest rates, and piles of paperwork? <strong>Loan81</strong> connects you with suitable lending options from top financial institutions with clarity, confidence, and dedicated advisor support.
+            Confused by complicated bank criteria, fluctuating interest rates, and endless paperwork? <strong>Loan81</strong> connects you with suitable lending options from top financial institutions with clarity, confidence, and dedicated 1-on-1 advisor support.
           </p>
 
           <div class="hero-features-list">
@@ -152,62 +153,115 @@
               <i class="fa-brands fa-whatsapp fa-lg"></i> Chat on WhatsApp
             </a>
           </div>
-        </div>
 
-        <!-- Hero Right: Quick Conversion Card -->
-        <div class="hero-lead-form-wrap">
-          <div class="lead-card">
-            <div class="lead-card-header">
-              <h3>Quick Loan Inquiry</h3>
-              <p>Get instant assistance from our verified loan advisors</p>
+          <!-- Hero Rates Ticker -->
+          <div class="hero-rates-bar">
+            <div class="hero-rate-item">
+              <div class="type"><i class="fa-solid fa-house-chimney" style="color: var(--color-primary-blue);"></i> Home Loan</div>
+              <div class="rate">8.35% <span>p.a.*</span></div>
             </div>
-
-            <form id="heroQuickForm" class="lead-form">
-              <div class="form-group">
-                <label for="heroLoanType" class="form-label">Select Loan Requirement</label>
-                <select id="heroLoanType" class="form-control" required>
-                  <option value="Personal Loan" selected>Personal Loan (Instant Cash / Salaried)</option>
-                  <option value="Business Loan">Business Loan (Unsecured / MSME)</option>
-                  <option value="Home Loan">Home Loan (Purchase / Construction)</option>
-                  <option value="Loan Against Property">Loan Against Property (Mortgage)</option>
-                  <option value="Debt Consolidation">Debt Consolidation / Balance Transfer</option>
-                  <option value="Car / Vehicle Loan">Car & Vehicle Loan</option>
-                </select>
-              </div>
-
-              <!-- Slider for Amount -->
-              <div class="amount-slider-wrap">
-                <div class="slider-val-row">
-                  <span style="font-size: 0.85rem; font-weight: 600; color: #475569;">Loan Amount Needed</span>
-                  <span id="heroLoanAmountDisplay" class="slider-amount-display">₹5,00,000</span>
-                </div>
-                <input type="range" id="heroLoanAmountSlider" class="custom-range" min="50000" max="5000000" step="25000" value="500000">
-                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #94a3b8; margin-top: 6px;">
-                  <span>₹50,000</span>
-                  <span>₹50 Lakh+</span>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="heroPhone" class="form-label">Mobile Number</label>
-                <input type="tel" id="heroPhone" class="form-control" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
-              </div>
-
-              <div class="form-group">
-                <label for="heroCity" class="form-label">City / Location</label>
-                <input type="text" id="heroCity" class="form-control" placeholder="e.g. New Delhi, Noida, Gurgaon" required value="New Delhi">
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 10px;">
-                Get Best Loan Offers <i class="fa-solid fa-arrow-right"></i>
-              </button>
-
-              <p class="form-footnote">
-                <i class="fa-solid fa-lock" style="color: var(--color-green-success);"></i> Your data is 100% safe. By submitting, you agree to our <a href="terms-conditions.html">Terms</a> & <a href="privacy-policy.html">Privacy Policy</a>.
-              </p>
-            </form>
+            <div class="hero-rate-item">
+              <div class="type"><i class="fa-solid fa-user-shield" style="color: var(--color-teal-accent);"></i> Personal Loan</div>
+              <div class="rate">10.49% <span>p.a.*</span></div>
+            </div>
+            <div class="hero-rate-item">
+              <div class="type"><i class="fa-solid fa-briefcase" style="color: #f59e0b;"></i> Business Loan</div>
+              <div class="rate">12.50% <span>p.a.*</span></div>
+            </div>
           </div>
         </div>
+
+        <!-- Hero Right: Visual Advisor Showcase -->
+        <div class="hero-visual-wrap">
+          <div class="hero-visual-card">
+            <img src="assets/images/hero-advisor.jpg" alt="Loan81 Senior Financial Advisor" width="600" height="450" loading="eager">
+
+            <!-- Floating Badge: Top Right -->
+            <div class="floating-badge badge-top-right">
+              <div class="floating-badge-icon">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <div class="floating-badge-text">
+                <div class="val">In-Principle Sanction</div>
+                <div class="label">Within 24 Hours</div>
+              </div>
+            </div>
+
+            <!-- Floating Badge: Bottom Left -->
+            <div class="floating-badge badge-bottom-left">
+              <div class="floating-badge-icon" style="background: var(--color-teal-gradient);">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="floating-badge-text">
+                <div class="val">40+ Lenders</div>
+                <div class="label">Top Banks & NBFCs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK LOAN ELIGIBILITY STRIP -->
+  <section class="quick-inquiry-strip" style="position: relative; z-index: 10; margin-top: -30px; margin-bottom: 20px;">
+    <div class="container">
+      <div class="lead-card" style="box-shadow: var(--shadow-xl); border: 2px solid rgba(23, 106, 184, 0.15); max-width: 1100px; margin: 0 auto; padding: 28px 32px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--color-border-light);">
+          <div>
+            <h3 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 2px;">
+              <i class="fa-solid fa-bolt" style="color: var(--color-teal-accent);"></i> Fast-Track Loan Eligibility & Rate Quote
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">
+              Instant options from top banks & NBFCs tailored to your income profile. 100% Free & Transparent.
+            </p>
+          </div>
+          <span class="hero-pill" style="margin: 0; background: #eef9f5; color: var(--color-green-dark); border-color: rgba(4,195,152,0.3);">
+            <span class="dot"></span> No Impact on Credit Score
+          </span>
+        </div>
+
+        <form id="heroQuickForm" class="lead-form" style="display: grid; grid-template-columns: 1.2fr 1.3fr 1fr 1fr 1.1fr; gap: 14px; align-items: flex-end;">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="heroLoanType" class="form-label">Select Loan Type</label>
+            <select id="heroLoanType" class="form-control" required>
+              <option value="Personal Loan" selected>Personal Loan (Instant Cash / Salaried)</option>
+              <option value="Business Loan">Business Loan (Unsecured / MSME)</option>
+              <option value="Home Loan">Home Loan (Purchase / Construction)</option>
+              <option value="Loan Against Property">Loan Against Property (Mortgage)</option>
+              <option value="Debt Consolidation">Debt Consolidation / Balance Transfer</option>
+              <option value="Car / Vehicle Loan">Car & Vehicle Loan</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <div class="slider-val-row" style="margin-bottom: 4px;">
+              <label for="heroLoanAmountSlider" class="form-label" style="margin-bottom: 0;">Amount Needed</label>
+              <span id="heroLoanAmountDisplay" class="slider-amount-display" style="font-size: 1.05rem;">₹5,00,000</span>
+            </div>
+            <input type="range" id="heroLoanAmountSlider" class="custom-range" min="50000" max="5000000" step="25000" value="500000">
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="heroPhone" class="form-label">Mobile Number</label>
+            <input type="tel" id="heroPhone" class="form-control" placeholder="10-digit number" pattern="[0-9]{10}" required>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="heroCity" class="form-label">City / Location</label>
+            <input type="text" id="heroCity" class="form-control" placeholder="e.g. New Delhi" required value="New Delhi">
+          </div>
+
+          <div>
+            <button type="submit" class="btn btn-primary btn-block" style="padding: 12px 14px; height: 46px;">
+              Get Best Offers <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </form>
+
+        <p class="form-footnote" style="margin-top: 12px; margin-bottom: 0;">
+          <i class="fa-solid fa-lock" style="color: var(--color-green-success);"></i> 256-Bit SSL Encrypted. Your details are strictly confidential. By submitting, you agree to our <a href="terms-conditions.html">Terms</a> & <a href="privacy-policy.html">Privacy Policy</a>.
+        </p>
       </div>
     </div>
   </section>
@@ -217,20 +271,20 @@
     <div class="container">
       <div class="trust-stats-grid">
         <div class="trust-stat-item">
-          <div class="trust-stat-number">20<span class="plus">+</span></div>
+          <div class="trust-stat-number">40<span class="plus">+</span></div>
           <div class="trust-stat-label">Banks & NBFC Partners</div>
         </div>
         <div class="trust-stat-item">
-          <div class="trust-stat-number">₹50<span class="plus">Cr+</span></div>
+          <div class="trust-stat-number">₹500<span class="plus">Cr+</span></div>
           <div class="trust-stat-label">Loan Volume Assisted</div>
         </div>
         <div class="trust-stat-item">
-          <div class="trust-stat-number">98<span class="plus">%</span></div>
+          <div class="trust-stat-number">98.8<span class="plus">%</span></div>
           <div class="trust-stat-label">Customer Satisfaction</div>
         </div>
         <div class="trust-stat-item">
           <div class="trust-stat-number">100<span class="plus">%</span></div>
-          <div class="trust-stat-label">Transparent Guidance</div>
+          <div class="trust-stat-label">Transparent Advisory</div>
         </div>
       </div>
     </div>
@@ -240,15 +294,18 @@
   <div class="bank-partners-strip">
     <div class="container">
       <div class="partners-wrap">
-        <div class="partners-title">Assisting with Top Lending Institutions:</div>
+        <div class="partners-title">
+          <i class="fa-solid fa-handshake" style="color: var(--color-teal-accent);"></i> Assisting with India's Leading Institutions:
+        </div>
         <div class="partners-badges">
-          <span class="partner-badge"><i class="fa-solid fa-building-columns"></i> HDFC Bank</span>
-          <span class="partner-badge"><i class="fa-solid fa-building-columns"></i> ICICI Bank</span>
-          <span class="partner-badge"><i class="fa-solid fa-building-columns"></i> State Bank of India</span>
-          <span class="partner-badge"><i class="fa-solid fa-building-columns"></i> Axis Bank</span>
-          <span class="partner-badge"><i class="fa-solid fa-building-columns"></i> Bajaj Finserv</span>
-          <span class="partner-badge"><i class="fa-solid fa-building-columns"></i> Tata Capital</span>
-          <span class="partner-badge"><i class="fa-solid fa-building-columns"></i> Kotak Mahindra</span>
+          <span class="partner-badge"><i class="fa-solid fa-building-columns" style="color: #004c8f;"></i> HDFC Bank</span>
+          <span class="partner-badge"><i class="fa-solid fa-building-columns" style="color: #b02a30;"></i> ICICI Bank</span>
+          <span class="partner-badge"><i class="fa-solid fa-building-columns" style="color: #1e40af;"></i> State Bank of India</span>
+          <span class="partner-badge"><i class="fa-solid fa-building-columns" style="color: #97144d;"></i> Axis Bank</span>
+          <span class="partner-badge"><i class="fa-solid fa-building-columns" style="color: #ed1c24;"></i> Kotak Mahindra</span>
+          <span class="partner-badge"><i class="fa-solid fa-building-columns" style="color: #005a9c;"></i> Tata Capital</span>
+          <span class="partner-badge"><i class="fa-solid fa-building-columns" style="color: #0072ce;"></i> Bajaj Finserv</span>
+          <span class="partner-badge"><i class="fa-solid fa-building-columns" style="color: #c4122f;"></i> Aditya Birla Finance</span>
         </div>
       </div>
     </div>
@@ -377,6 +434,66 @@
     </div>
   </section>
 
+  <!-- FEATURED SPOTLIGHT 1: HOME LOAN SUCCESS -->
+  <section class="visual-spotlight-section">
+    <div class="container">
+      <div class="spotlight-grid">
+        <!-- Left: Family Image with Floating ROI Badge -->
+        <div class="spotlight-img-wrap">
+          <img src="assets/images/home-loan-family.jpg" alt="Indian family celebrating home loan approval" loading="lazy">
+          <div class="spotlight-floating-card">
+            <div>
+              <div class="title">Home Loan Advisory</div>
+              <div class="sub">HDFC, SBI, ICICI & PNB Housing</div>
+            </div>
+            <div class="rate-chip">ROI from 8.40% p.a.</div>
+          </div>
+        </div>
+
+        <!-- Right: Spotlight Copy & Benefits -->
+        <div class="spotlight-content">
+          <span class="section-tag" style="background: rgba(4, 195, 152, 0.12); color: var(--color-green-dark);">
+            <i class="fa-solid fa-house-chimney-user"></i> Dream Home Journey
+          </span>
+          <h2 class="section-title" style="font-size: clamp(1.8rem, 2.8vw, 2.4rem); margin-top: 10px;">
+            Step Into Your New Home With Confidence & Lowest Interest Rates
+          </h2>
+          <p style="color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+            Buying a home across Delhi, Noida, or Gurugram is life’s biggest milestone. Our dedicated home loan advisors compare rates across 20+ top banks to secure the best tenure, highest eligibility, and smooth legal clearance.
+          </p>
+
+          <div class="spotlight-checklist">
+            <div class="spotlight-check-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Funding up to 85% of property market value</span>
+            </div>
+            <div class="spotlight-check-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Tenures extended up to 30 years for affordable monthly EMIs</span>
+            </div>
+            <div class="spotlight-check-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Expert guidance through builder approvals & registry paperwork</span>
+            </div>
+            <div class="spotlight-check-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Existing loan balance transfer with attractive interest reduction</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="btn btn-primary btn-lg open-lead-modal" data-loan-type="Home Loan">
+              Apply for Home Loan <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <a href="#calculator" class="btn btn-secondary btn-lg">
+              <i class="fa-solid fa-calculator"></i> Calculate EMI
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- INTERACTIVE LOAN CALCULATOR SECTION -->
   <section class="section-padding calc-section" id="calculator">
     <div class="container">
@@ -450,6 +567,18 @@
                 <div class="summary-emi-hero">
                   <div class="label">Estimated Monthly EMI</div>
                   <div id="summaryMonthlyEmi" class="amount">₹16,490</div>
+                </div>
+
+                <!-- Dynamic EMI Ratio Visual Bar -->
+                <div class="emi-visual-box">
+                  <div class="emi-bar-track">
+                    <div id="emiBarPrincipal" class="emi-bar-principal" style="width: 84.2%;" title="Principal: 84%"></div>
+                    <div id="emiBarInterest" class="emi-bar-interest" style="width: 15.8%;" title="Interest: 16%"></div>
+                  </div>
+                  <div class="emi-legend-row">
+                    <span class="emi-legend-item"><span class="emi-legend-dot principal"></span> Principal (Loan)</span>
+                    <span class="emi-legend-item"><span class="emi-legend-dot interest"></span> Total Interest</span>
+                  </div>
                 </div>
 
                 <div class="summary-item">
@@ -539,6 +668,66 @@
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED SPOTLIGHT 2: BUSINESS & MSME LOANS -->
+  <section class="visual-spotlight-section alt-bg">
+    <div class="container">
+      <div class="spotlight-grid">
+        <!-- Left: Copy & Business Offerings -->
+        <div class="spotlight-content">
+          <span class="section-tag" style="background: rgba(23, 106, 184, 0.12); color: var(--color-primary-navy);">
+            <i class="fa-solid fa-chart-line"></i> MSME & Enterprise Growth
+          </span>
+          <h2 class="section-title" style="font-size: clamp(1.8rem, 2.8vw, 2.4rem); margin-top: 10px;">
+            Power Your Business Ambitions With Collateral-Free Growth Capital
+          </h2>
+          <p style="color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+            Whether you manage a manufacturing setup, a wholesale trade business, or a retail chain in Delhi NCR, cash flow shouldn't hold back your expansion. Loan81 connects you with customized business credit lines, machinery financing, and term loans without locking up personal property.
+          </p>
+
+          <div class="spotlight-checklist">
+            <div class="spotlight-check-item">
+              <i class="fa-solid fa-circle-check" style="color: var(--color-primary-blue);"></i>
+              <span>Unsecured loans up to ₹1 Crore with zero property mortgage</span>
+            </div>
+            <div class="spotlight-check-item">
+              <i class="fa-solid fa-circle-check" style="color: var(--color-primary-blue);"></i>
+              <span>Rapid 48-72 hour approvals evaluated on GST & banking inflows</span>
+            </div>
+            <div class="spotlight-check-item">
+              <i class="fa-solid fa-circle-check" style="color: var(--color-primary-blue);"></i>
+              <span>Flexible overdraft facilities — pay interest only on amount utilized</span>
+            </div>
+            <div class="spotlight-check-item">
+              <i class="fa-solid fa-circle-check" style="color: var(--color-primary-blue);"></i>
+              <span>Dedicated commercial loan advisor assisting with financials & sanction</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="btn btn-primary btn-lg open-lead-modal" data-loan-type="Business Loan">
+              Apply for Business Loan <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <a href="tel:8368250300" class="btn btn-secondary btn-lg">
+              <i class="fa-solid fa-phone"></i> Speak with Advisor
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Business Image with Floating Badge -->
+        <div class="spotlight-img-wrap">
+          <img src="assets/images/business-growth.jpg" alt="Indian entrepreneur growing business with MSME loan" loading="lazy">
+          <div class="spotlight-floating-card">
+            <div>
+              <div class="title">MSME Working Capital & Growth</div>
+              <div class="sub">Bajaj, Tata Capital, Axis, Kotak</div>
+            </div>
+            <div class="rate-chip" style="background: var(--color-primary-navy);">Up to ₹1 Crore</div>
           </div>
         </div>
       </div>
@@ -940,9 +1129,8 @@
       <div class="footer-grid">
         <!-- Col 1: About -->
         <div class="footer-col footer-about">
-          <a href="index.html" class="brand-logo" style="color: var(--color-white);">
-            <div class="brand-logo-icon">81</div>
-            <span>Loan<span class="highlight">81</span></span>
+          <a href="index.html" class="brand-logo" title="Loan81 Home">
+            <img src="assets/images/logo-white.png" alt="Loan81 Logo" class="footer-logo">
           </a>
           <p>
             Loan81 is a leading loan advisory and assistance platform dedicated to making borrowing clearer, transparent, and more convenient for every customer across India.

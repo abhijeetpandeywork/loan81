@@ -51,36 +51,40 @@ if ($is_logged_in && $pdo) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loan81 - Leads Management Portal</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon-81.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-    body { background: #f8fafc; color: #0f172a; }
-    .header { background: #0a1b39; color: #fff; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 1.4rem; font-weight: 800; font-family: 'Plus Jakarta Sans', sans-serif; color: #fff; display: flex; align-items: center; gap: 8px; }
-    .logo span { color: #0052ff; }
+    body { background: #f4f8fc; color: #0E2954; }
+    .header { background: #0E2954; color: #fff; padding: 16px 28px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .logo { display: flex; align-items: center; gap: 10px; }
     .container { max-width: 1300px; margin: 30px auto; padding: 0 20px; }
-    .card { background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); padding: 24px; margin-bottom: 24px; }
+    .card { background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(14,41,84,0.06); padding: 24px; margin-bottom: 24px; }
     .table-wrap { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; }
-    th { background: #f1f5f9; padding: 12px 14px; font-weight: 600; color: #475569; border-bottom: 2px solid #e2e8f0; }
+    th { background: #eef5fc; padding: 12px 14px; font-weight: 700; color: #0E2954; border-bottom: 2px solid #cbd5e1; }
     td { padding: 12px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: middle; }
     tr:hover { background: #f8fafc; }
     .badge { display: inline-block; padding: 4px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
-    .badge-blue { background: #e0edff; color: #0052ff; }
-    .badge-green { background: #dcfce7; color: #15803d; }
-    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; text-decoration: none; border: none; cursor: pointer; }
-    .btn-primary { background: #0052ff; color: #fff; }
-    .btn-green { background: #25d366; color: #fff; }
+    .badge-blue { background: #e0edff; color: #176AB8; }
+    .badge-green { background: #e6f9f4; color: #04C398; border: 1px solid rgba(4,195,152,0.3); }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; text-decoration: none; border: none; cursor: pointer; }
+    .btn-primary { background: linear-gradient(135deg, #176AB8, #04C398); color: #fff; }
+    .btn-green { background: #04C398; color: #fff; }
     .btn-outline { background: transparent; border: 1px solid #cbd5e1; color: #475569; }
-    .login-box { max-width: 400px; margin: 80px auto; background: #fff; padding: 34px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.06); text-align: center; }
+    .login-box { max-width: 420px; margin: 80px auto; background: #fff; padding: 36px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 15px 35px rgba(14,41,84,0.1); text-align: center; }
     .input { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; margin: 16px 0; font-size: 1rem; text-align: center; }
+    .input:focus { outline: none; border-color: #176AB8; box-shadow: 0 0 0 3px rgba(23,106,184,0.15); }
   </style>
 </head>
 <body>
 
   <div class="header">
-    <div class="logo">Loan<span>81</span> Leads Portal</div>
+    <div class="logo">
+      <img src="../assets/images/logo-white.png" alt="Loan81" style="height: 38px;">
+      <span style="font-size: 0.9rem; opacity: 0.8; margin-left: 10px; font-weight: 500; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 12px;">Admin Leads Portal</span>
+    </div>
     <?php if ($is_logged_in): ?>
       <div>
         <a href="?export=csv" class="btn btn-green"><i class="fa-solid fa-file-excel"></i> Export CSV</a>
@@ -92,14 +96,15 @@ if ($is_logged_in && $pdo) {
   <div class="container">
     <?php if (!$is_logged_in): ?>
       <div class="login-box">
-        <h2 style="font-family: 'Plus Jakarta Sans'; margin-bottom: 8px;">Advisor Access</h2>
-        <p style="color: #64748b; font-size: 0.9rem;">Enter admin security PIN to view customer inquiries.</p>
+        <img src="../assets/images/logo.png" alt="Loan81" style="height: 48px; margin-bottom: 16px;">
+        <h2 style="font-family: 'Plus Jakarta Sans'; margin-bottom: 6px; font-size: 1.4rem;">Advisor Portal Access</h2>
+        <p style="color: #64748b; font-size: 0.875rem;">Enter authorization PIN to manage loan applications.</p>
         <?php if ($error): ?>
           <p style="color: #ef4444; margin-top: 12px; font-size: 0.85rem; font-weight: 600;"><?= htmlspecialchars($error) ?></p>
         <?php endif; ?>
         <form method="POST">
           <input type="password" name="pin" class="input" placeholder="Enter Access PIN" required autofocus>
-          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px;">Login to Portal</button>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 13px; font-size: 0.95rem;">Login to Portal</button>
         </form>
       </div>
     <?php else: ?>
