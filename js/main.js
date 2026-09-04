@@ -18,27 +18,52 @@ document.addEventListener('DOMContentLoaded', () => {
    ========================================================================== */
 function initMobileMenu() {
   const mobileToggle = document.querySelector('.mobile-toggle');
+  const drawer = document.getElementById('mobileDrawer');
+  const overlay = document.getElementById('drawerOverlay');
+  const closeBtn = document.getElementById('drawerCloseBtn');
   const navMenu = document.querySelector('.nav-menu');
   const header = document.querySelector('.main-header');
 
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      const isExpanded = navMenu.classList.contains('active');
-      mobileToggle.setAttribute('aria-expanded', isExpanded);
-    });
+  const openDrawer = () => {
+    if (drawer) drawer.classList.add('active');
+    if (overlay) overlay.classList.add('active');
+    if (navMenu) navMenu.classList.add('active');
+    if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  };
 
-    // Close menu when clicking outside or on a link
-    document.addEventListener('click', (e) => {
-      if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target) && navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
+  const closeDrawer = () => {
+    if (drawer) drawer.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+    if (navMenu) navMenu.classList.remove('active');
+    if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = (drawer && drawer.classList.contains('active')) || (navMenu && navMenu.classList.contains('active'));
+      if (isOpen) {
+        closeDrawer();
+      } else {
+        openDrawer();
       }
     });
+  }
 
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-      });
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeDrawer);
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', closeDrawer);
+  }
+
+  // Close when clicking any nav link or CTA button inside drawer
+  if (drawer) {
+    drawer.querySelectorAll('a, .open-lead-modal').forEach(el => {
+      el.addEventListener('click', closeDrawer);
     });
   }
 
@@ -55,21 +80,42 @@ function initMobileMenu() {
 }
 
 /* ==========================================================================
-   2. HERO QUICK LEAD SLIDER
+   2. HERO QUICK LEAD SLIDER & PRESET CHIPS
    ========================================================================== */
 function initHeroSliders() {
   const heroSlider = document.getElementById('heroLoanAmountSlider');
   const heroDisplay = document.getElementById('heroLoanAmountDisplay');
+  const amountChips = document.querySelectorAll('.quick-amount-chips .amount-chip');
 
   if (heroSlider && heroDisplay) {
-    const updateHeroDisplay = () => {
-      const val = parseInt(heroSlider.value, 10);
-      heroDisplay.textContent = '₹' + formatIndianCurrency(val);
+    const updateHeroDisplay = (val) => {
+      const numericVal = parseInt(val || heroSlider.value, 10);
+      heroDisplay.textContent = '₹' + formatIndianCurrency(numericVal);
       updateSliderTrack(heroSlider);
+
+      // Update active chip state
+      if (amountChips.length) {
+        amountChips.forEach(chip => {
+          if (parseInt(chip.dataset.val, 10) === numericVal) {
+            chip.classList.add('active');
+          } else {
+            chip.classList.remove('active');
+          }
+        });
+      }
     };
 
-    heroSlider.addEventListener('input', updateHeroDisplay);
+    heroSlider.addEventListener('input', () => updateHeroDisplay());
     updateHeroDisplay();
+
+    // Click handler for preset chips
+    amountChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const val = parseInt(chip.dataset.val, 10);
+        heroSlider.value = val;
+        updateHeroDisplay(val);
+      });
+    });
   }
 }
 
