@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=2.8">
+  <link rel="stylesheet" href="css/style.css?v=2.9">
 </head>
 <body>
 
@@ -264,10 +264,10 @@
       </div>
 
       <!-- Visual Story & Advisor Showcase -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; margin: 36px 0; background: var(--color-bg-subtle); border-radius: var(--radius-xl); padding: 28px; border: 1px solid var(--color-border);">
-        <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); border: 3px solid #fff;">
-          <img src="assets/images/hero-advisor.jpg" alt="Loan81 Financial Consultant" style="width: 100%; height: 280px; object-fit: cover; display: block;">
-          <div style="position: absolute; bottom: 12px; left: 12px; right: 12px; background: rgba(14, 41, 84, 0.9); backdrop-filter: blur(8px); color: #fff; border-radius: var(--radius-sm); padding: 8px 14px; font-size: 0.825rem; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+      <div class="about-story-card">
+        <div class="story-img-box">
+          <img src="assets/images/hero-advisor.jpg" alt="Loan81 Financial Consultant">
+          <div class="story-img-badge">
             <i class="fa-solid fa-user-check" style="color: var(--color-teal-accent);"></i> Dedicated 1-on-1 Advisory Desk
           </div>
         </div>
@@ -277,7 +277,7 @@
           <p style="font-size: 0.925rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 14px;">
             We operate independently of any single bank. Our sole priority is ensuring you borrow under terms that protect your financial wellbeing.
           </p>
-          <div style="display: flex; gap: 10px; font-size: 0.85rem; font-weight: 700; color: var(--color-primary-navy);">
+          <div class="story-badges-row">
             <span><i class="fa-solid fa-check" style="color: var(--color-teal-accent);"></i> 40+ Lenders</span>
             <span><i class="fa-solid fa-check" style="color: var(--color-teal-accent);"></i> 100% Free Consultation</span>
           </div>
@@ -285,7 +285,7 @@
       </div>
 
       <!-- What We Do Box -->
-      <div style="background: var(--color-white); border-radius: var(--radius-xl); padding: 40px; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); margin-bottom: 40px;">
+      <div class="about-what-we-do-box">
         <h2 style="font-size: 1.8rem; margin-bottom: 16px; color: var(--color-primary-navy);">What We Do</h2>
         <p style="color: var(--color-text-muted); margin-bottom: 20px; font-size: 1.05rem;">
           At Loan81, we act as loan advisors and loan assistance professionals. Our role is to understand your requirements and help facilitate your journey towards suitable loan options available through our lending and financial-service partners.
@@ -325,7 +325,7 @@
       </div>
 
       <!-- We Are Advisors, Not Lenders Callout -->
-      <div style="background: linear-gradient(135deg, var(--color-navy-dark), #102a5c); color: var(--color-white); border-radius: var(--radius-xl); padding: 40px; margin-bottom: 40px;">
+      <div class="about-disclaimer-box">
         <h2 style="color: var(--color-white); font-size: 1.8rem; margin-bottom: 14px;">
           <i class="fa-solid fa-scale-balanced" style="color: #60a5fa; margin-right: 8px;"></i> We Are Advisors, Not Lenders
         </h2>
@@ -392,7 +392,7 @@
       </div>
 
       <!-- Our Commitment -->
-      <div style="background: var(--color-white); border: 2px solid var(--color-primary-blue); border-radius: var(--radius-xl); padding: 36px; margin-bottom: 50px;">
+      <div class="about-commitment-box">
         <h3 style="font-size: 1.5rem; margin-bottom: 18px; color: var(--color-navy-dark);"><i class="fa-solid fa-handshake" style="color: var(--color-primary-blue); margin-right: 8px;"></i> Our Commitment</h3>
         <p style="color: var(--color-text-muted); margin-bottom: 16px;">At Loan81, we are committed to:</p>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
@@ -407,7 +407,7 @@
       </div>
 
       <!-- Contact Callout -->
-      <div style="text-align: center; background: var(--color-bg-subtle); padding: 40px; border-radius: var(--radius-xl); border: 1px solid var(--color-border);">
+      <div class="about-cta-box">
         <h3 style="font-size: 1.6rem; margin-bottom: 10px;">Need Assistance with a Loan?</h3>
         <p style="color: var(--color-text-muted); margin-bottom: 24px;">Talk to Loan81 today. Our advisors in New Delhi are ready to assist you.</p>
         <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
@@ -494,6 +494,6 @@
   </a>
 
   <!-- Master JavaScript -->
-  <script src="js/main.js?v=2.8"></script>
+  <script src="js/main.js?v=2.9"></script>
 </body>
 </html>

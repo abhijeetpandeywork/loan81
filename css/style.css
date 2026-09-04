@@ -2207,26 +2207,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .drawer-header {
-  padding: 14px 18px;
+  padding: 10px 16px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--color-border-light);
-  background: rgba(255, 255, 255, 0.98);
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(14, 41, 84, 0.05);
   flex-shrink: 0;
+  z-index: 10;
+  position: relative;
 }
 
 .drawer-logo img {
-  height: 38px !important;
+  height: 36px !important;
   width: auto !important;
-  max-width: 150px !important;
+  max-width: 140px !important;
   object-fit: contain !important;
   display: block;
 }
 
 .drawer-close-btn {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   border: 1px solid var(--color-border);
   background: var(--color-bg-subtle);
@@ -2234,7 +2238,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: var(--transition-fast);
 }
@@ -2249,10 +2253,11 @@ h1, h2, h3, h4, h5, h6 {
   flex: 1;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 14px 16px 28px 16px;
+  padding: 14px 14px 75px 14px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
+  overscroll-behavior: contain;
 }
 
 /* 1. Advisor Live Status Card in Drawer */
@@ -2264,10 +2269,11 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 8px 24px rgba(14, 41, 84, 0.22);
+  box-shadow: 0 6px 20px rgba(14, 41, 84, 0.2);
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
 }
 
 .drawer-advisor-card::before {
@@ -2742,6 +2748,145 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
 }
 
+/* ==========================================================================
+   PAGE-SPECIFIC RESPONSIVE CARDS & UTILITY CLASSES
+   ========================================================================== */
+/* 1. About Page Story & Philosophy Showcase Card */
+.about-story-card {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 36px;
+  align-items: center;
+  margin: 36px 0;
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  border: 1px solid var(--color-border);
+}
+
+.story-img-box {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 3px solid #fff;
+}
+
+.story-img-box img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.story-img-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(14, 41, 84, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.story-badges-row {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary-navy);
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.about-what-we-do-box {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 40px;
+}
+
+/* 2. Services Page Deep Dive Cards */
+.service-deepdive-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+.service-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.service-cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* 3. Contact Page Cards */
+.contact-form-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.about-disclaimer-box {
+  background: linear-gradient(135deg, var(--color-navy-dark), #102a5c);
+  color: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  margin-bottom: 40px;
+}
+
+.about-commitment-box {
+  background: var(--color-white);
+  border: 2px solid var(--color-primary-blue);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  margin-bottom: 50px;
+}
+
+.about-cta-box {
+  text-align: center;
+  background: var(--color-bg-subtle);
+  padding: 40px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+}
+
+.calc-info-card {
+  margin-top: 40px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+}
+
 .hero-quick-form-grid {
   display: grid;
   grid-template-columns: 1.2fr 1.3fr 1fr 1fr 1.1fr;
@@ -2822,18 +2967,21 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     border-radius: var(--radius-sm);
     background: var(--color-bg-subtle);
     border: 1px solid var(--color-border);
     color: var(--color-primary-navy);
+    cursor: pointer;
   }
   .mobile-header-apply {
     display: inline-flex !important;
     align-items: center;
+    justify-content: center;
     gap: 6px;
-    padding: 7px 14px;
+    height: 36px;
+    padding: 0 14px;
     font-size: 0.8rem;
     font-weight: 700;
     border-radius: var(--radius-full);
@@ -2905,15 +3053,61 @@ h1, h2, h3, h4, h5, h6 {
   body {
     padding-bottom: 60px;
   }
+  .header-inner {
+    height: 58px;
+  }
   .mobile-bottom-bar {
     display: block;
   }
+  .floating-whatsapp,
   .whatsapp-floating-btn {
-    bottom: 76px !important;
-    right: 16px !important;
-    width: 48px !important;
-    height: 48px !important;
-    font-size: 1.4rem !important;
+    bottom: 74px !important;
+    right: 14px !important;
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.35rem !important;
+  }
+  .floating-whatsapp .badge {
+    top: -3px !important;
+    right: -3px !important;
+    font-size: 0.58rem !important;
+    padding: 1px 5px !important;
+  }
+  .about-story-card {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 20px 16px !important;
+    margin: 24px 0 !important;
+  }
+  .story-img-box img {
+    height: 200px !important;
+  }
+  .about-what-we-do-box {
+    padding: 22px 16px !important;
+    margin-bottom: 24px !important;
+  }
+  .about-disclaimer-box {
+    padding: 22px 16px !important;
+    margin-bottom: 24px !important;
+  }
+  .about-commitment-box {
+    padding: 22px 16px !important;
+    margin-bottom: 28px !important;
+  }
+  .about-cta-box {
+    padding: 24px 16px !important;
+  }
+  .service-deepdive-card {
+    padding: 20px 16px !important;
+    margin-bottom: 24px !important;
+  }
+  .contact-form-card,
+  .contact-info-card {
+    padding: 22px 16px !important;
+  }
+  .calc-info-card {
+    padding: 20px 16px !important;
+    margin-top: 24px !important;
   }
   .hero-rates-bar {
     grid-template-columns: 1fr;
@@ -3086,6 +3280,10 @@ h1, h2, h3, h4, h5, h6 {
     height: 38px !important;
   }
   .header-inner {
-    height: 64px;
+    height: 58px;
+  }
+  .contact-form-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
   }
 }

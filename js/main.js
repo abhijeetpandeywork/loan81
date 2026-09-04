@@ -25,7 +25,11 @@ function initMobileMenu() {
   const header = document.querySelector('.main-header');
 
   const openDrawer = () => {
-    if (drawer) drawer.classList.add('active');
+    if (drawer) {
+      drawer.classList.add('active');
+      const b = drawer.querySelector('.drawer-body');
+      if (b) b.scrollTop = 0;
+    }
     if (overlay) overlay.classList.add('active');
     if (navMenu) navMenu.classList.add('active');
     if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'true');

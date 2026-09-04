@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=2.8">
+  <link rel="stylesheet" href="css/style.css?v=2.9">
 </head>
 <body>
 
@@ -313,12 +313,12 @@
         </div>
 
         <!-- Right: Inquiry Form Card -->
-        <div style="background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-sm);">
+        <div class="contact-form-card">
           <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Send a Direct Message</h3>
           <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 24px;">Our senior loan advisor will review your message and respond promptly.</p>
 
           <form id="contactPageForm">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+            <div class="contact-form-row">
               <div class="form-group">
                 <label class="form-label" for="contactName">Your Name</label>
                 <input type="text" id="contactName" class="form-control" placeholder="Full name" required>
@@ -448,6 +448,7 @@
     <span class="badge">1</span>
   </a>
 
-  <script src="js/main.js?v=2.8"></script>
+  <!-- Master JavaScript -->
+  <script src="js/main.js?v=2.9"></script>
 </body>
 </html>
