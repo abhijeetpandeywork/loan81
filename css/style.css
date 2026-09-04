@@ -446,6 +446,10 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-navy-dark);
 }
 
+.mobile-header-apply {
+  display: none !important;
+}
+
 /* ==========================================================================
    HERO SECTION & QUICK LEAD FORM
    ========================================================================== */
@@ -2253,11 +2257,15 @@ h1, h2, h3, h4, h5, h6 {
   flex: 1;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 14px 14px 75px 14px;
+  padding: 16px 14px 95px 14px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   overscroll-behavior: contain;
+}
+
+.drawer-body > * {
+  flex-shrink: 0;
 }
 
 /* 1. Advisor Live Status Card in Drawer */
@@ -2577,11 +2585,13 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(135deg, #071833 0%, #0E2954 45%, #176AB8 80%, #04C398 100%);
   color: #ffffff;
   border-radius: var(--radius-lg);
-  padding: 16px 14px;
+  padding: 18px 16px;
   position: relative;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(14, 41, 84, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+  margin: 4px 0;
 }
 
 .drawer-cta-banner::before {
@@ -2660,6 +2670,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* 7. Quick Direct Contact Box */
+.drawer-contact-box {
+  flex-shrink: 0;
+  padding-bottom: 24px;
+}
+
 .drawer-contact-btns {
   display: flex;
   flex-direction: column;
@@ -2816,21 +2831,149 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 40px;
 }
 
-/* 2. Services Page Deep Dive Cards */
+/* 2. Services Page Deep Dive Cards (Desktop & Mobile Optimized) */
 .service-deepdive-card {
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  padding: 40px;
-  margin-bottom: 40px;
-  box-shadow: var(--shadow-sm);
+  padding: 36px;
+  margin-bottom: 36px;
+  box-shadow: 0 4px 20px rgba(14, 41, 84, 0.05);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.service-deepdive-card:hover {
+  box-shadow: 0 10px 30px rgba(14, 41, 84, 0.08);
+}
+
+.service-card-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.service-card-grid.reverse {
+  grid-template-columns: 1fr 1.1fr;
+}
+
+.service-media-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(14, 41, 84, 0.1);
+  border: 3px solid #ffffff;
+  height: 330px;
+}
+
+.service-media-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.service-deepdive-card:hover .service-media-wrap img {
+  transform: scale(1.03);
+}
+
+.service-media-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(14, 41, 84, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-media-badge i {
+  color: var(--color-teal-accent);
+  font-size: 0.9rem;
+}
+
+.service-header-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.service-header-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-light);
+  color: var(--color-primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.service-header-titles h2 {
+  font-size: 1.65rem;
+  margin-bottom: 2px;
+  color: var(--color-primary-navy);
+}
+
+.service-header-titles span {
+  font-size: 0.86rem;
+  color: var(--color-primary-blue);
+  font-weight: 600;
+  display: block;
+}
+
+.service-desc {
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin-bottom: 18px;
 }
 
 .service-spec-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
-  margin-bottom: 24px;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.service-spec-item {
+  background: var(--color-bg-subtle);
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary-blue);
+  border-top: 1px solid var(--color-border-light);
+  border-right: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.service-spec-item strong {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+.service-spec-item span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-navy-dark);
 }
 
 .service-cta-row {
@@ -3045,6 +3188,18 @@ h1, h2, h3, h4, h5, h6 {
   }
   .hero-quick-form-grid > div:last-child {
     grid-column: span 2;
+  }
+  .service-card-grid,
+  .service-card-grid.reverse {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .service-media-wrap {
+    order: -1;
+    height: 240px !important;
+  }
+  .service-media-wrap img {
+    height: 240px !important;
   }
 }
 
@@ -3285,5 +3440,18 @@ h1, h2, h3, h4, h5, h6 {
   .contact-form-row {
     grid-template-columns: 1fr !important;
     gap: 12px !important;
+  }
+  .service-media-wrap {
+    height: 190px !important;
+  }
+  .service-media-wrap img {
+    height: 190px !important;
+  }
+  .service-spec-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  .service-header-titles h2 {
+    font-size: 1.35rem !important;
   }
 }
