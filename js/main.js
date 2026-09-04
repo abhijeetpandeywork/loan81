@@ -463,6 +463,17 @@ function initFormSubmissions() {
 }
 
 function handleLeadSuccess(data) {
+  // Asynchronously send lead to database
+  try {
+    fetch('api/submit_lead.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).catch(err => console.log('Lead sync noted:', err));
+  } catch (e) {
+    // Graceful fallback
+  }
+
   // Display confirmation alert or toast
   const message = `Thank you! Your loan inquiry has been submitted to Loan81 advisors.\n\nOur senior loan advisor will contact you at +91 ${data.phone} within 15-30 minutes.`;
   alert(message);
@@ -485,3 +496,4 @@ function handleLeadSuccess(data) {
     window.open(`https://wa.me/918368250300?text=${waText}`, '_blank');
   }
 }
+

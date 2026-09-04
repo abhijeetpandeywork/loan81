@@ -1,0 +1,32 @@
+name: Deploy Loan81 to Hostinger
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Hostinger via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 147.93.23.184
+          port: 65002
+          username: u406313474
+          password: ${{ secrets.HOSTINGER_SSH_PASSWORD }}
+          script: |
+            cd /home/u406313474/domains/loft.digitalrubix.site/public_html
+            git config --global --add safe.directory /home/u406313474/domains/loft.digitalrubix.site/public_html
+            if [ -d .git ]; then
+              git fetch origin main
+              git reset --hard origin/main
+            else
+              git clone https://${{ secrets.GH_PAT }}@github.com/abhijeetpandeywork/loan81.git .
+            fi
+            chmod -R 755 .
+            echo "Loan81 deployed to loft.digitalrubix.site successfully!"

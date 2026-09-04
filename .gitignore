@@ -2,3 +2,10 @@ node_modules/
 package-lock.json
 .system_generated/
 *.log
+test_*.js
+check_*.js
+setup_*.js
+inspect_*.js
+deploy_*.js
+set_*.js
+package.json
