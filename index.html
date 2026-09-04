@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=2.7">
+  <link rel="stylesheet" href="css/style.css?v=2.8">
 </head>
 <body>
 
@@ -93,7 +93,10 @@
           </button>
         </div>
 
-        <!-- Mobile Menu Toggle Button -->
+        <!-- Mobile Header Quick Apply & Menu Toggle -->
+        <button type="button" class="mobile-header-apply open-lead-modal" data-loan-type="Header Quick Apply" aria-label="Quick Loan Application">
+          <i class="fa-solid fa-bolt"></i> Apply
+        </button>
         <button class="mobile-toggle" aria-label="Toggle navigation menu">
           <i class="fa-solid fa-bars fa-xl"></i>
         </button>
@@ -101,12 +104,12 @@
     </div>
   </header>
 
-  <!-- MOBILE OFF-CANVAS DRAWER -->
+  <!-- MOBILE OFF-CANVAS DRAWER WITH HIGH-IMPACT CTAs & GRAPHICS -->
   <div id="drawerOverlay" class="drawer-overlay"></div>
-  <div id="mobileDrawer" class="mobile-drawer" aria-hidden="true">
+  <aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation Drawer">
     <!-- Drawer Header -->
     <div class="drawer-header">
-      <a href="index.html" class="drawer-logo">
+      <a href="index.html" class="drawer-logo" title="Loan81 Home">
         <img src="assets/images/logo.png" alt="Loan81 Logo">
       </a>
       <button id="drawerCloseBtn" class="drawer-close-btn" aria-label="Close menu">
@@ -116,22 +119,36 @@
 
     <!-- Drawer Body (Scrollable) -->
     <div class="drawer-body">
-      <!-- Advisor Live Status Card -->
+      <!-- 1. Advisor Live Status Card with Background Mesh Graphic -->
       <div class="drawer-advisor-card">
         <div class="drawer-advisor-avatar">
-          <img src="assets/images/hero-advisor.jpg" alt="Loan81 Senior Advisor">
+          <img src="assets/images/hero-advisor.jpg" alt="Loan81 Senior Financial Advisor" loading="lazy">
           <span class="online-indicator" title="Online now"></span>
         </div>
         <div class="drawer-advisor-info">
-          <div class="name">Loan81 Advisory Desk</div>
-          <div class="status"><span class="pulse-dot"></span> Available for Free Guidance</div>
+          <div class="name">Loan81 Advisory Desk <i class="fa-solid fa-circle-check" style="color: #04C398; font-size: 0.75rem;"></i></div>
+          <div class="status"><span class="pulse-dot"></span> Online • Free Guidance</div>
         </div>
         <a href="https://wa.me/918368250300?text=Hello%20Loan81!%20I%20need%20expert%20loan%20guidance." target="_blank" rel="noopener" class="drawer-advisor-btn" title="Chat on WhatsApp">
           <i class="fa-brands fa-whatsapp"></i>
         </a>
       </div>
 
-      <!-- Main Navigation Links with Icons -->
+      <!-- 2. Mini App-Style Quick Actions -->
+      <div class="drawer-quick-actions-row">
+        <button type="button" class="drawer-action-tile open-lead-modal" data-loan-type="Quick Apply">
+          <i class="fa-solid fa-bolt"></i>
+          <span>Check Eligibility</span>
+          <small>60 Secs</small>
+        </button>
+        <a href="calculator.html" class="drawer-action-tile">
+          <i class="fa-solid fa-calculator"></i>
+          <span>EMI Calculator</span>
+          <small>Instant</small>
+        </a>
+      </div>
+
+      <!-- 3. Main Navigation Links with Icons -->
       <div class="drawer-nav-section">
         <div class="drawer-section-title">Navigation</div>
         <ul class="drawer-nav-list">
@@ -182,36 +199,52 @@
         </ul>
       </div>
 
-      <!-- Quick Loan Categories Chips -->
+      <!-- 4. Quick Loan Categories Chips with Rate Info -->
       <div class="drawer-quick-products">
         <div class="drawer-section-title">Popular Loan Services</div>
         <div class="drawer-product-chips">
           <a href="services.html#home" class="drawer-chip">
-            <i class="fa-solid fa-house-chimney"></i> Home Loan
+            <i class="fa-solid fa-house-chimney"></i>
+            <div>
+              <span>Home Loan</span>
+              <small>From 8.40%</small>
+            </div>
           </a>
           <a href="services.html#personal" class="drawer-chip">
-            <i class="fa-solid fa-user-shield"></i> Personal Loan
+            <i class="fa-solid fa-user-shield"></i>
+            <div>
+              <span>Personal Loan</span>
+              <small>From 10.49%</small>
+            </div>
           </a>
           <a href="services.html#business" class="drawer-chip">
-            <i class="fa-solid fa-briefcase"></i> Business Loan
+            <i class="fa-solid fa-briefcase"></i>
+            <div>
+              <span>Business Loan</span>
+              <small>Up to ₹1 Cr</small>
+            </div>
           </a>
           <a href="services.html#lap" class="drawer-chip">
-            <i class="fa-solid fa-building"></i> Loan vs Property
+            <i class="fa-solid fa-building"></i>
+            <div>
+              <span>Loan vs Property</span>
+              <small>Lowest EMI</small>
+            </div>
           </a>
         </div>
       </div>
 
-      <!-- High-Impact CTA Banner Card -->
+      <!-- 5. High-Impact CTA Banner Card with Watermark Graphic -->
       <div class="drawer-cta-banner">
-        <div class="drawer-cta-tag"><i class="fa-solid fa-bolt"></i> Fast In-Principle Approval</div>
-        <h4>Need Loan Sanction Without Delays?</h4>
-        <p>Compare criteria and lowest interest rates across 40+ premier banks & NBFCs with 100% zero fees.</p>
+        <div class="drawer-cta-tag"><i class="fa-solid fa-bolt"></i> FAST IN-PRINCIPLE APPROVAL</div>
+        <h4>Compare 40+ Premier Banks & NBFCs</h4>
+        <p>Get customized loan offers at lowest interest rates with 100% zero upfront charges.</p>
         <button type="button" class="btn btn-primary btn-block open-lead-modal" data-loan-type="General Loan Inquiry">
           Check Instant Eligibility <i class="fa-solid fa-arrow-right"></i>
         </button>
       </div>
 
-      <!-- Quick Direct Contact Box -->
+      <!-- 6. Quick Direct Contact Box & Office Details -->
       <div class="drawer-contact-box">
         <div class="drawer-section-title">Immediate Advisor Help</div>
         <div class="drawer-contact-btns">
@@ -221,7 +254,7 @@
           </a>
           <a href="https://wa.me/918368250300?text=Hello%20Loan81!%20I%20need%20quick%20loan%20guidance." target="_blank" rel="noopener" class="drawer-contact-btn whatsapp">
             <i class="fa-brands fa-whatsapp"></i>
-            <span>WhatsApp Advisor</span>
+            <span>WhatsApp Senior Advisor</span>
           </a>
         </div>
         <div class="drawer-office-note">
@@ -229,7 +262,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </aside>
 
   <!-- HERO SECTION WITH QUICK LEAD FORM -->
   <section class="hero-section">
@@ -1482,6 +1515,6 @@
   </div>
 
   <!-- Master JavaScript -->
-  <script src="js/main.js?v=2.7"></script>
+  <script src="js/main.js?v=2.8"></script>
 </body>
 </html>

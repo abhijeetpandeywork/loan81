@@ -2016,7 +2016,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   background: rgba(10, 27, 57, 0.7);
   backdrop-filter: blur(4px);
-  z-index: 2000;
+  z-index: 2500;
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -2169,7 +2169,7 @@ h1, h2, h3, h4, h5, h6 {
 .drawer-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(7, 24, 51, 0.68);
+  background: rgba(7, 24, 51, 0.72);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 2100;
@@ -2188,14 +2188,17 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   right: 0;
   bottom: 0;
-  width: min(350px, 86vw);
+  width: min(360px, 88vw);
   background: #ffffff;
+  background-image: 
+    radial-gradient(circle at 100% 0%, rgba(23, 106, 184, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(4, 195, 152, 0.05) 0%, transparent 40%);
   z-index: 2101;
   transform: translateX(105%);
   transition: transform 0.38s cubic-bezier(0.33, 1, 0.68, 1);
   display: flex;
   flex-direction: column;
-  box-shadow: -10px 0 40px rgba(14, 41, 84, 0.25);
+  box-shadow: -12px 0 45px rgba(14, 41, 84, 0.28);
   border-left: 1px solid rgba(23, 106, 184, 0.15);
 }
 
@@ -2204,12 +2207,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .drawer-header {
-  padding: 16px 20px;
+  padding: 14px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--color-border-light);
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.98);
   flex-shrink: 0;
 }
 
@@ -2246,24 +2249,35 @@ h1, h2, h3, h4, h5, h6 {
   flex: 1;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 20px 18px 36px 18px;
+  padding: 14px 16px 28px 16px;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 14px;
 }
 
 /* 1. Advisor Live Status Card in Drawer */
 .drawer-advisor-card {
-  background: linear-gradient(135deg, #0E2954 0%, #176AB8 100%);
+  background: linear-gradient(135deg, #071833 0%, #0E2954 55%, #176AB8 100%);
   color: #ffffff;
   border-radius: var(--radius-lg);
-  padding: 14px 16px;
+  padding: 12px 14px;
   display: flex;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 8px 24px rgba(14, 41, 84, 0.2);
+  box-shadow: 0 8px 24px rgba(14, 41, 84, 0.22);
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.drawer-advisor-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 14px 14px;
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .drawer-advisor-card::after {
@@ -2273,7 +2287,7 @@ h1, h2, h3, h4, h5, h6 {
   right: -20%;
   width: 100px;
   height: 100px;
-  background: radial-gradient(circle, rgba(4, 195, 152, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(4, 195, 152, 0.4) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -2308,16 +2322,21 @@ h1, h2, h3, h4, h5, h6 {
 .drawer-advisor-info {
   flex: 1;
   min-width: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .drawer-advisor-info .name {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: #ffffff;
   font-family: var(--font-heading);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .drawer-advisor-info .status {
@@ -2344,53 +2363,102 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .drawer-advisor-btn {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #25d366;
   color: #ffffff !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   flex-shrink: 0;
   box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
   transition: transform var(--transition-fast);
+  position: relative;
+  z-index: 1;
 }
 
 .drawer-advisor-btn:active {
   transform: scale(0.9);
 }
 
-/* 2. Drawer Section Headers */
+/* 2. Mini App-Style Quick Actions */
+.drawer-quick-actions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.drawer-action-tile {
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  color: var(--color-navy-dark);
+}
+
+.drawer-action-tile:hover, .drawer-action-tile:active {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-blue);
+  transform: translateY(-1px);
+}
+
+.drawer-action-tile i {
+  font-size: 1.1rem;
+  color: var(--color-primary-blue);
+  margin-bottom: 2px;
+}
+
+.drawer-action-tile span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-navy-dark);
+  line-height: 1.2;
+}
+
+.drawer-action-tile small {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-teal-accent);
+}
+
+/* 3. Drawer Section Headers */
 .drawer-section-title {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #64748b;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-/* 3. Categorized Drawer Navigation */
+/* 4. Categorized Drawer Navigation */
 .drawer-nav-list {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .drawer-nav-link {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 10px 12px;
+  gap: 12px;
+  padding: 8px 10px;
   border-radius: var(--radius-md);
   color: var(--color-navy-dark);
   font-weight: 600;
-  font-size: 0.94rem;
+  font-size: 0.9rem;
   transition: all var(--transition-fast);
   background: transparent;
 }
@@ -2408,15 +2476,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .drawer-nav-icon {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-sm);
   background: var(--color-bg-subtle);
   color: var(--color-primary-blue);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   flex-shrink: 0;
   transition: var(--transition-fast);
 }
@@ -2432,9 +2500,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .drawer-badge {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  padding: 3px 8px;
+  padding: 2px 7px;
   border-radius: var(--radius-full);
   background: rgba(23, 106, 184, 0.1);
   color: var(--color-primary-blue);
@@ -2446,34 +2514,50 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .drawer-chevron {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: #94a3b8;
 }
 
-/* 4. Quick Loan Categories Chips */
+/* 5. Quick Loan Categories Chips */
 .drawer-product-chips {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 6px;
 }
 
 .drawer-chip {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 9px 12px;
+  padding: 8px 10px;
   border-radius: var(--radius-sm);
   background: var(--color-bg-subtle);
   border: 1px solid var(--color-border);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--color-navy-dark);
   transition: var(--transition-fast);
+  text-decoration: none;
 }
 
 .drawer-chip i {
   color: var(--color-primary-blue);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+}
+
+.drawer-chip div {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-chip div span {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.drawer-chip div small {
+  font-size: 0.65rem;
+  color: var(--color-teal-accent);
 }
 
 .drawer-chip:active {
@@ -2482,60 +2566,94 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-primary-blue);
 }
 
-/* 5. High-Impact CTA Promo Card */
+/* 6. High-Impact CTA Promo Card */
 .drawer-cta-banner {
-  background: linear-gradient(135deg, #0E2954 0%, #176AB8 60%, #04C398 100%);
+  background: linear-gradient(135deg, #071833 0%, #0E2954 45%, #176AB8 80%, #04C398 100%);
   color: #ffffff;
   border-radius: var(--radius-lg);
-  padding: 20px 18px;
+  padding: 16px 14px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(14, 41, 84, 0.22);
+  box-shadow: 0 10px 30px rgba(14, 41, 84, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.drawer-cta-banner::before {
+  content: '₹';
+  position: absolute;
+  right: 6px;
+  bottom: -16px;
+  font-size: 5.5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  line-height: 1;
+  font-family: var(--font-heading);
+}
+
+.drawer-cta-banner::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(4, 195, 152, 0.4) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .drawer-cta-tag {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.68rem;
+  gap: 5px;
+  font-size: 0.65rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: #04C398;
-  background: rgba(255, 255, 255, 0.12);
-  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 3px 9px;
   border-radius: var(--radius-full);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .drawer-cta-banner h4 {
   color: #ffffff;
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   font-weight: 800;
   line-height: 1.3;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+  position: relative;
+  z-index: 1;
 }
 
 .drawer-cta-banner p {
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   color: #e2e8f0;
-  line-height: 1.5;
-  margin-bottom: 14px;
+  line-height: 1.45;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
 }
 
 .drawer-cta-banner .btn {
   background: #ffffff !important;
   color: var(--color-primary-navy) !important;
   font-weight: 700 !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
   border: none;
+  font-size: 0.85rem;
+  padding: 9px 14px;
+  position: relative;
+  z-index: 1;
 }
 
 .drawer-cta-banner .btn:active {
   transform: scale(0.96);
 }
 
-/* 6. Quick Direct Contact Box */
+/* 7. Quick Direct Contact Box */
 .drawer-contact-btns {
   display: flex;
   flex-direction: column;
@@ -2574,9 +2692,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .drawer-office-note {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   color: #64748b;
-  margin-top: 10px;
+  margin-top: 8px;
   line-height: 1.4;
   display: flex;
   align-items: flex-start;
@@ -2588,7 +2706,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 2px;
 }
 
-/* 7. Interactive Quick Amount Preset Chips */
+/* 8. Interactive Quick Amount Preset Chips */
 .quick-amount-chips {
   display: flex;
   gap: 6px;
@@ -2701,7 +2819,33 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
   }
   .mobile-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-subtle);
+    border: 1px solid var(--color-border);
+    color: var(--color-primary-navy);
+  }
+  .mobile-header-apply {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    background: var(--color-blue-gradient);
+    color: #ffffff !important;
+    border: none;
+    box-shadow: 0 3px 10px rgba(23, 106, 184, 0.35);
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+  }
+  .mobile-header-apply:active {
+    transform: scale(0.94);
   }
   .nav-menu {
     display: none !important; /* Managed by #mobileDrawer */
