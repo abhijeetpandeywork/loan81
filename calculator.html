@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Loan & EMI Calculator | Loan81 - Monthly EMI & Short-Term Loan Estimator</title>
+  <meta name="description" content="Calculate your loan EMI, total interest, and full repayment schedule in seconds. Free interactive loan calculator by Loan81 for personal loans, business loans, and home loans.">
+  <link rel="canonical" href="https://www.loan81.com/calculator.html">
+
+  <meta name="theme-color" content="#0052ff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- TOP NOTIFICATION BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-inner">
+        <div class="top-bar-left">
+          <div class="top-bar-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>Support:</span>
+            <a href="tel:8368250300"><strong>+91 8368250300</strong></a>
+          </div>
+          <div class="top-bar-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:loan81.info@gmail.com">loan81.info@gmail.com</a>
+          </div>
+          <div class="top-bar-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Dwarka Mor, New Delhi 110059</span>
+          </div>
+        </div>
+        <div class="top-bar-right">
+          <span style="font-size: 0.8rem; color: #94a3b8;">Follow Us:</span>
+          <div class="social-links">
+            <a href="https://www.instagram.com/loaneightyone?igsh=MTluM3Jwa2EybW1ucg==" target="_blank" rel="noopener" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1DbQH6ae6b/" target="_blank" rel="noopener" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="main-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-logo-icon">81</div>
+          <span>Loan<span class="highlight">81</span></span>
+        </a>
+
+        <nav class="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="services.html" class="nav-link">Loan Products</a>
+          <a href="calculator.html" class="nav-link active">EMI Calculator</a>
+          <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+          <a href="contact.html" class="nav-link">Contact Us</a>
+        </nav>
+
+        <div class="nav-cta-group">
+          <a href="tel:8368250300" class="btn btn-secondary btn-sm"><i class="fa-solid fa-phone"></i> Call Advisor</a>
+          <button type="button" class="btn btn-primary btn-sm open-lead-modal" data-loan-type="Personal Loan">Apply Online <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <button class="mobile-toggle" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars fa-xl"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-tag"><i class="fa-solid fa-calculator"></i> Accurate Financial Planning</span>
+      <h1>Loan & EMI Calculator</h1>
+      <p>Fine-tune your borrowing decision with real-time interest, tenure, and monthly installment calculations.</p>
+    </div>
+  </section>
+
+  <!-- CALCULATOR EMBED SECTION -->
+  <section class="content-block calc-section" style="padding-top: 40px;">
+    <div class="container">
+      <div class="calc-box">
+        <!-- Dual Mode Tabs -->
+        <div class="calc-tabs">
+          <button class="calc-tab-btn active" data-mode="monthly">
+            <i class="fa-solid fa-calendar-days"></i> Monthly EMI Calculator (Standard Loans)
+          </button>
+          <button class="calc-tab-btn" data-mode="flexi">
+            <i class="fa-solid fa-clock"></i> Short-Term Flexi Calculator (Days-Based)
+          </button>
+        </div>
+
+        <!-- Monthly EMI Wrapper -->
+        <div id="monthlyCalcWrap">
+          <div class="calc-grid">
+            <div class="calc-controls">
+              <!-- Slider 1: Amount -->
+              <div class="calc-slider-group">
+                <div class="calc-slider-header">
+                  <label for="emiAmount">Loan Amount Required</label>
+                  <span id="emiAmountDisplay" class="calc-val-box">₹5,00,000</span>
+                </div>
+                <input type="range" id="emiAmount" class="custom-range" min="50000" max="5000000" step="25000" value="500000">
+                <div class="calc-min-max">
+                  <span>₹50,000</span>
+                  <span>₹50,00,000</span>
+                </div>
+              </div>
+
+              <!-- Slider 2: Interest Rate -->
+              <div class="calc-slider-group">
+                <div class="calc-slider-header">
+                  <label for="emiRate">Expected Interest Rate (% per annum)</label>
+                  <span id="emiRateDisplay" class="calc-val-box">11.5%</span>
+                </div>
+                <input type="range" id="emiRate" class="custom-range" min="8.0" max="24.0" step="0.25" value="11.5">
+                <div class="calc-min-max">
+                  <span>8.0%</span>
+                  <span>24.0%</span>
+                </div>
+              </div>
+
+              <!-- Slider 3: Tenure -->
+              <div class="calc-slider-group">
+                <div class="calc-slider-header">
+                  <label for="emiTenure">Loan Tenure (Months)</label>
+                  <span id="emiTenureDisplay" class="calc-val-box">36 Months (3.0 Yrs)</span>
+                </div>
+                <input type="range" id="emiTenure" class="custom-range" min="6" max="84" step="6" value="36">
+                <div class="calc-min-max">
+                  <span>6 Months</span>
+                  <span>84 Months (7 Yrs)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Summary Output Card -->
+            <div class="calc-summary-card">
+              <div>
+                <div class="summary-emi-hero">
+                  <div class="label">Estimated Monthly EMI</div>
+                  <div id="summaryMonthlyEmi" class="amount">₹16,490</div>
+                </div>
+
+                <div class="summary-item">
+                  <span class="label">Principal Amount:</span>
+                  <strong id="summaryPrincipal" class="val">₹5,00,000</strong>
+                </div>
+                <div class="summary-item">
+                  <span class="label">Total Interest Payable:</span>
+                  <strong id="summaryInterest" class="val">₹93,640</strong>
+                </div>
+                <div class="summary-item total">
+                  <span class="label">Total Amount Payable:</span>
+                  <strong id="summaryTotalPayable" class="val">₹5,93,640</strong>
+                </div>
+              </div>
+
+              <div style="margin-top: 24px;">
+                <button class="btn btn-primary btn-block btn-lg open-lead-modal" data-loan-type="Standard Loan">
+                  Apply for this Loan <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flexi Short-Term Calculator Wrapper -->
+        <div id="flexiCalcWrap" style="display: none;">
+          <div class="calc-grid">
+            <div class="calc-controls">
+              <div class="calc-slider-group">
+                <div class="calc-slider-header">
+                  <label for="flexiAmount">Short-Term Amount Required</label>
+                  <span id="flexiAmountDisplay" class="calc-val-box">₹30,000</span>
+                </div>
+                <input type="range" id="flexiAmount" class="custom-range" min="5000" max="100000" step="5000" value="30000">
+                <div class="calc-min-max">
+                  <span>₹5,000</span>
+                  <span>₹1,00,000</span>
+                </div>
+              </div>
+
+              <div class="calc-slider-group">
+                <div class="calc-slider-header">
+                  <label for="flexiDays">Preferred Tenure (Days)</label>
+                  <span id="flexiDaysDisplay" class="calc-val-box">60 Days</span>
+                </div>
+                <input type="range" id="flexiDays" class="custom-range" min="30" max="180" step="10" value="60">
+                <div class="calc-min-max">
+                  <span>30 Days</span>
+                  <span>180 Days</span>
+                </div>
+              </div>
+
+              <div class="calc-slider-group">
+                <div class="calc-slider-header">
+                  <label for="flexiRate">Daily Interest Rate</label>
+                  <span id="flexiRateDisplay" class="calc-val-box">0.65% / Day</span>
+                </div>
+                <input type="range" id="flexiRate" class="custom-range" min="0.30" max="1.0" step="0.05" value="0.65">
+                <div class="calc-min-max">
+                  <span>0.30%</span>
+                  <span>1.0%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="calc-summary-card">
+              <div>
+                <div class="summary-emi-hero">
+                  <div class="label">Total Repayable Amount</div>
+                  <div id="flexiTotalPayable" class="amount">₹41,700</div>
+                </div>
+
+                <div class="summary-item">
+                  <span class="label">Estimated Interest:</span>
+                  <strong id="flexiTotalInterest" class="val">₹11,700</strong>
+                </div>
+                <div class="summary-item">
+                  <span class="label">Foreclosure Charges:</span>
+                  <strong class="val" style="color: var(--color-green-success);">Nil / Zero</strong>
+                </div>
+              </div>
+
+              <div style="margin-top: 24px;">
+                <button class="btn btn-primary btn-block btn-lg open-lead-modal" data-loan-type="Short Term Loan">
+                  Get Instant Funds <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Educational Note on EMI Calculation -->
+      <div style="margin-top: 40px; background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 30px;">
+        <h3 style="font-size: 1.3rem; margin-bottom: 12px; color: var(--color-navy-dark);">
+          <i class="fa-solid fa-circle-info" style="color: var(--color-primary-blue); margin-right: 8px;"></i> How is Loan EMI Calculated?
+        </h3>
+        <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 14px;">
+          Equated Monthly Installments (EMIs) are calculated using the standard reducing balance mathematical formula:
+        </p>
+        <div style="background: var(--color-bg-subtle); padding: 14px 20px; border-radius: var(--radius-sm); font-family: monospace; font-size: 1rem; color: var(--color-primary-blue); margin-bottom: 14px;">
+          EMI = [P x R x (1+R)^N] / [(1+R)^N - 1]
+        </div>
+        <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">
+          Where <strong>P</strong> is the Principal loan amount, <strong>R</strong> is the monthly interest rate (Annual rate / 12 / 100), and <strong>N</strong> is the number of monthly installments. The calculations displayed are indicative estimates to help you plan your monthly budget. Final EMI values depend on the exact sanction terms issued by the lending bank or NBFC.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-about">
+          <a href="index.html" class="brand-logo" style="color: var(--color-white);">
+            <div class="brand-logo-icon">81</div>
+            <span>Loan<span class="highlight">81</span></span>
+          </a>
+          <p>Loan81 is an independent loan advisory platform committed to transparent, customer-first financial guidance.</p>
+          <div class="social-links" style="margin-top: 18px;">
+            <a href="https://www.instagram.com/loaneightyone?igsh=MTluM3Jwa2EybW1ucg==" target="_blank" rel="noopener" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1DbQH6ae6b/" target="_blank" rel="noopener" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Loan Products</a></li>
+            <li><a href="calculator.html">EMI Calculator</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Loan Advisory</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#personal">Personal Loans</a></li>
+            <li><a href="services.html#business">Business Loans</a></li>
+            <li><a href="services.html#home">Home Loans</a></li>
+            <li><a href="services.html#lap">Loan Against Property</a></li>
+            <li><a href="services.html#consolidation">Debt Consolidation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Loan81</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>A-1/1, Rama Park, Dwarka Mor, New Delhi 110059</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:8368250300">+91 8368250300</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:loan81.info@gmail.com">loan81.info@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer-box">
+        <strong>IMPORTANT STATUTORY DISCLAIMER:</strong> Loan81 operates strictly as a loan advisory and assistance facilitation platform. Loan81 is NOT a bank, NBFC, or direct lender and does not issue or disburse loans directly. All loan approvals, sanctioned amounts, interest rates, tenures, processing fees, and terms are determined solely by the respective bank or NBFC based on their internal credit policies.
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Loan81 (www.loan81.com). All Rights Reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-conditions.html">Terms & Conditions</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/918368250300?text=Hello%20Loan81!%20I%20have%20calculated%20my%20loan%20and%20need%20help%20applying." target="_blank" rel="noopener" class="floating-whatsapp" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="badge">1</span>
+  </a>
+
+  <!-- MODAL WIZARD -->
+  <div id="leadModalOverlay" class="modal-overlay">
+    <div class="modal-content">
+      <button id="closeModalBtn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-progress">
+        <div class="progress-step active"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+      </div>
+      <form id="wizardLeadForm">
+        <div id="wizardStep1" class="wizard-step active">
+          <h3 style="margin-bottom: 6px;">Step 1: Loan Requirement</h3>
+          <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 20px;">Tell us what type of financing you are seeking.</p>
+          <div class="form-group">
+            <label class="form-label" for="wizardLoanType">Select Loan Category</label>
+            <select id="wizardLoanType" class="form-control" required>
+              <option value="Personal Loan">Personal Loan</option>
+              <option value="Business Loan">Business Loan (MSME)</option>
+              <option value="Home Loan">Home Loan</option>
+              <option value="Loan Against Property">Loan Against Property (LAP)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="wizardLoanAmount">Estimated Loan Amount (₹)</label>
+            <input type="number" id="wizardLoanAmount" class="form-control" placeholder="e.g. 500000" min="10000" step="5000" required>
+          </div>
+          <button type="button" class="btn btn-primary btn-block wizard-next-btn" style="margin-top: 24px;">Continue <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div id="wizardStep2" class="wizard-step">
+          <h3 style="margin-bottom: 6px;">Step 2: Employment & Income</h3>
+          <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 20px;">Helps us match bank eligibility criteria.</p>
+          <div class="form-group">
+            <label class="form-label" for="wizardEmployment">Employment Status</label>
+            <select id="wizardEmployment" class="form-control" required>
+              <option value="Salaried">Salaried (Private / Govt / MNC)</option>
+              <option value="Self-Employed Professional">Self-Employed Professional</option>
+              <option value="Business Owner">Business Owner / Trader</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="wizardMonthlyIncome">Monthly In-Hand Income (₹)</label>
+            <input type="number" id="wizardMonthlyIncome" class="form-control" placeholder="e.g. 45000" min="10000" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="wizardCity">City / Location</label>
+            <input type="text" id="wizardCity" class="form-control" placeholder="e.g. New Delhi" required>
+          </div>
+          <div style="display: flex; gap: 12px; margin-top: 24px;">
+            <button type="button" class="btn btn-secondary wizard-prev-btn" style="flex: 1;">Back</button>
+            <button type="button" class="btn btn-primary wizard-next-btn" style="flex: 2;">Continue</button>
+          </div>
+        </div>
+        <div id="wizardStep3" class="wizard-step">
+          <h3 style="margin-bottom: 6px;">Step 3: Contact Details</h3>
+          <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 20px;">Where should we send your bank offers?</p>
+          <div class="form-group">
+            <label class="form-label" for="wizardFullName">Full Legal Name</label>
+            <input type="text" id="wizardFullName" class="form-control" placeholder="As per PAN Card" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="wizardPhone">Mobile Number (WhatsApp Enabled)</label>
+            <input type="tel" id="wizardPhone" class="form-control" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+          </div>
+          <div style="display: flex; gap: 12px; margin-top: 24px;">
+            <button type="button" class="btn btn-secondary wizard-prev-btn" style="flex: 1;">Back</button>
+            <button type="submit" class="btn btn-primary" style="flex: 2;">Submit Inquiry</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
