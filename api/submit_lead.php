@@ -19,13 +19,19 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // Get JSON input or Form POST
 $input = json_decode(file_get_contents('php://input'), true) ?? $_POST;
 
-$name = trim($input['name'] ?? '');
-$phone = trim($input['phone'] ?? '');
+$name = trim($input['name'] ?? $input['fullName'] ?? '');
+$phone = trim($input['phone'] ?? $input['mobile'] ?? '');
 $email = trim($input['email'] ?? '');
-$loan_type = trim($input['loan_type'] ?? 'Personal Loan');
-$amount = !empty($input['amount']) ? floatval($input['amount']) : null;
-$monthly_income = !empty($input['monthly_income']) ? floatval($input['monthly_income']) : null;
-$employment_type = trim($input['employment_type'] ?? '');
+
+// Priority: loan_type (snake) or loanType (camel)
+$loan_type = trim($input['loan_type'] ?? $input['loanType'] ?? '');
+if (empty($loan_type)) {
+    $loan_type = 'General Loan';
+}
+
+$amount = !empty($input['amount']) ? floatval(preg_replace('/[^\d.]/', '', (string)$input['amount'])) : null;
+$monthly_income = !empty($input['monthly_income']) ? floatval(preg_replace('/[^\d.]/', '', (string)$input['monthly_income'])) : (!empty($input['monthlyIncome']) ? floatval(preg_replace('/[^\d.]/', '', (string)$input['monthlyIncome'])) : null);
+$employment_type = trim($input['employment_type'] ?? $input['employmentType'] ?? '');
 $city = trim($input['city'] ?? '');
 $message = trim($input['message'] ?? '');
 $source = trim($input['source'] ?? 'Website Inquiry');

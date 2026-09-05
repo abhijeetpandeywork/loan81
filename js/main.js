@@ -370,9 +370,13 @@ function initLeadModal() {
     if (modal) {
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
-      if (prefilledLoanType) {
-        const loanSelect = document.getElementById('wizardLoanType');
-        if (loanSelect) loanSelect.value = prefilledLoanType;
+      const loanSelect = document.getElementById('wizardLoanType');
+      if (loanSelect) {
+        if (prefilledLoanType && Array.from(loanSelect.options).some(opt => opt.value === prefilledLoanType)) {
+          loanSelect.value = prefilledLoanType;
+        } else if (!loanSelect.value) {
+          loanSelect.value = 'Personal Loan';
+        }
       }
       setStep(1);
     }
@@ -456,10 +460,10 @@ function initFormSubmissions() {
   if (heroForm) {
     heroForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const loanType = document.getElementById('heroLoanType').value;
-      const amount = document.getElementById('heroLoanAmountSlider').value;
-      const phone = document.getElementById('heroPhone').value;
-      const city = document.getElementById('heroCity').value;
+      const loanType = document.getElementById('heroLoanType') ? document.getElementById('heroLoanType').value : 'Personal Loan';
+      const amount = document.getElementById('heroLoanAmountSlider') ? document.getElementById('heroLoanAmountSlider').value : '500000';
+      const phone = document.getElementById('heroPhone') ? document.getElementById('heroPhone').value.trim() : '';
+      const city = document.getElementById('heroCity') ? document.getElementById('heroCity').value.trim() : '';
 
       if (!phone || phone.length < 10) {
         alert('Please enter a valid 10-digit mobile number.');
@@ -468,10 +472,11 @@ function initFormSubmissions() {
 
       handleLeadSuccess({
         source: 'Hero Quick Form',
-        loanType,
-        amount,
-        phone,
-        city
+        loan_type: loanType,
+        loanType: loanType,
+        amount: amount,
+        phone: phone,
+        city: city
       });
     });
   }
@@ -481,11 +486,14 @@ function initFormSubmissions() {
   if (wizardForm) {
     wizardForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('wizardFullName').value;
-      const phone = document.getElementById('wizardPhone').value;
-      const loanType = document.getElementById('wizardLoanType').value;
-      const amount = document.getElementById('wizardLoanAmount').value;
-      const city = document.getElementById('wizardCity').value;
+      const name = document.getElementById('wizardFullName') ? document.getElementById('wizardFullName').value.trim() : '';
+      const phone = document.getElementById('wizardPhone') ? document.getElementById('wizardPhone').value.trim() : '';
+      const email = document.getElementById('wizardEmail') ? document.getElementById('wizardEmail').value.trim() : '';
+      const loanType = document.getElementById('wizardLoanType') ? document.getElementById('wizardLoanType').value : 'Personal Loan';
+      const amount = document.getElementById('wizardLoanAmount') ? document.getElementById('wizardLoanAmount').value : '';
+      const employmentType = document.getElementById('wizardEmployment') ? document.getElementById('wizardEmployment').value : '';
+      const monthlyIncome = document.getElementById('wizardMonthlyIncome') ? document.getElementById('wizardMonthlyIncome').value : '';
+      const city = document.getElementById('wizardCity') ? document.getElementById('wizardCity').value.trim() : '';
 
       if (!phone || phone.length < 10) {
         alert('Please enter a valid 10-digit mobile number.');
@@ -494,11 +502,17 @@ function initFormSubmissions() {
 
       handleLeadSuccess({
         source: 'Multi-Step Modal Wizard',
-        name,
-        phone,
-        loanType,
-        amount,
-        city
+        name: name,
+        phone: phone,
+        email: email,
+        loan_type: loanType,
+        loanType: loanType,
+        amount: amount,
+        employment_type: employmentType,
+        employmentType: employmentType,
+        monthly_income: monthlyIncome,
+        monthlyIncome: monthlyIncome,
+        city: city
       });
     });
   }
@@ -508,17 +522,20 @@ function initFormSubmissions() {
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('contactName').value;
-      const phone = document.getElementById('contactPhone').value;
-      const email = document.getElementById('contactEmail').value;
-      const message = document.getElementById('contactMessage').value;
+      const name = document.getElementById('contactName') ? document.getElementById('contactName').value.trim() : '';
+      const phone = document.getElementById('contactPhone') ? document.getElementById('contactPhone').value.trim() : '';
+      const email = document.getElementById('contactEmail') ? document.getElementById('contactEmail').value.trim() : '';
+      const loanType = document.getElementById('contactLoanType') ? document.getElementById('contactLoanType').value : 'General Query';
+      const message = document.getElementById('contactMessage') ? document.getElementById('contactMessage').value.trim() : '';
 
       handleLeadSuccess({
         source: 'Contact Page Inquiry',
-        name,
-        phone,
-        email,
-        message
+        name: name,
+        phone: phone,
+        email: email,
+        loan_type: loanType,
+        loanType: loanType,
+        message: message
       });
     });
   }
@@ -531,7 +548,10 @@ function handleLeadSuccess(data) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
-    }).catch(err => console.log('Lead sync noted:', err));
+    })
+    .then(res => res.json())
+    .then(resp => console.log('Lead saved to DB:', resp))
+    .catch(err => console.log('Lead sync noted:', err));
   } catch (e) {
     // Graceful fallback
   }
