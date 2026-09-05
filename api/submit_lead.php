@@ -32,6 +32,7 @@ if (empty($loan_type)) {
 $amount = !empty($input['amount']) ? floatval(preg_replace('/[^\d.]/', '', (string)$input['amount'])) : null;
 $monthly_income = !empty($input['monthly_income']) ? floatval(preg_replace('/[^\d.]/', '', (string)$input['monthly_income'])) : (!empty($input['monthlyIncome']) ? floatval(preg_replace('/[^\d.]/', '', (string)$input['monthlyIncome'])) : null);
 $employment_type = trim($input['employment_type'] ?? $input['employmentType'] ?? '');
+$cibil_score = trim($input['cibil_score'] ?? $input['cibilScore'] ?? $input['cibil'] ?? '');
 $city = trim($input['city'] ?? '');
 $message = trim($input['message'] ?? '');
 $source = trim($input['source'] ?? 'Website Inquiry');
@@ -45,8 +46,8 @@ if (empty($phone)) {
 if ($pdo) {
     try {
         $stmt = $pdo->prepare("
-            INSERT INTO leads (name, phone, email, loan_type, amount, monthly_income, employment_type, city, message, source, ip_address)
-            VALUES (:name, :phone, :email, :loan_type, :amount, :monthly_income, :employment_type, :city, :message, :source, :ip_address)
+            INSERT INTO leads (name, phone, email, loan_type, amount, monthly_income, employment_type, cibil_score, city, message, source, ip_address)
+            VALUES (:name, :phone, :email, :loan_type, :amount, :monthly_income, :employment_type, :cibil_score, :city, :message, :source, :ip_address)
         ");
         $stmt->execute([
             ':name' => $name,
@@ -56,6 +57,7 @@ if ($pdo) {
             ':amount' => $amount,
             ':monthly_income' => $monthly_income,
             ':employment_type' => $employment_type,
+            ':cibil_score' => $cibil_score,
             ':city' => $city,
             ':message' => $message,
             ':source' => $source,

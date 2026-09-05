@@ -463,6 +463,7 @@ function initFormSubmissions() {
       const loanType = document.getElementById('heroLoanType') ? document.getElementById('heroLoanType').value : 'Personal Loan';
       const amount = document.getElementById('heroLoanAmountSlider') ? document.getElementById('heroLoanAmountSlider').value : '500000';
       const phone = document.getElementById('heroPhone') ? document.getElementById('heroPhone').value.trim() : '';
+      const cibil = document.getElementById('heroCibil') ? document.getElementById('heroCibil').value : '750+';
       const city = document.getElementById('heroCity') ? document.getElementById('heroCity').value.trim() : '';
 
       if (!phone || phone.length < 10) {
@@ -475,7 +476,46 @@ function initFormSubmissions() {
         loan_type: loanType,
         loanType: loanType,
         amount: amount,
+        cibil_score: cibil,
+        cibilScore: cibil,
         phone: phone,
+        city: city
+      });
+    });
+  }
+
+  // Homepage Dedicated Enquiry Form
+  const homeEnquiryForm = document.getElementById('homeFullEnquiryForm');
+  if (homeEnquiryForm) {
+    homeEnquiryForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('homeFullName') ? document.getElementById('homeFullName').value.trim() : '';
+      const phone = document.getElementById('homePhone') ? document.getElementById('homePhone').value.trim() : '';
+      const loanType = document.getElementById('homeLoanType') ? document.getElementById('homeLoanType').value : 'Personal Loan';
+      const amount = document.getElementById('homeLoanAmount') ? document.getElementById('homeLoanAmount').value : '';
+      const employmentType = document.getElementById('homeEmployment') ? document.getElementById('homeEmployment').value : '';
+      const monthlyIncome = document.getElementById('homeMonthlyIncome') ? document.getElementById('homeMonthlyIncome').value : '';
+      const cibil = document.getElementById('homeCibil') ? document.getElementById('homeCibil').value : '750+';
+      const city = document.getElementById('homeCity') ? document.getElementById('homeCity').value.trim() : '';
+
+      if (!phone || phone.length < 10) {
+        alert('Please enter a valid 10-digit mobile number.');
+        return;
+      }
+
+      handleLeadSuccess({
+        source: 'Homepage Direct Application',
+        name: name,
+        phone: phone,
+        loan_type: loanType,
+        loanType: loanType,
+        amount: amount,
+        employment_type: employmentType,
+        employmentType: employmentType,
+        monthly_income: monthlyIncome,
+        monthlyIncome: monthlyIncome,
+        cibil_score: cibil,
+        cibilScore: cibil,
         city: city
       });
     });
@@ -493,6 +533,7 @@ function initFormSubmissions() {
       const amount = document.getElementById('wizardLoanAmount') ? document.getElementById('wizardLoanAmount').value : '';
       const employmentType = document.getElementById('wizardEmployment') ? document.getElementById('wizardEmployment').value : '';
       const monthlyIncome = document.getElementById('wizardMonthlyIncome') ? document.getElementById('wizardMonthlyIncome').value : '';
+      const cibil = document.getElementById('wizardCibil') ? document.getElementById('wizardCibil').value : '750+';
       const city = document.getElementById('wizardCity') ? document.getElementById('wizardCity').value.trim() : '';
 
       if (!phone || phone.length < 10) {
@@ -512,6 +553,8 @@ function initFormSubmissions() {
         employmentType: employmentType,
         monthly_income: monthlyIncome,
         monthlyIncome: monthlyIncome,
+        cibil_score: cibil,
+        cibilScore: cibil,
         city: city
       });
     });
@@ -526,6 +569,7 @@ function initFormSubmissions() {
       const phone = document.getElementById('contactPhone') ? document.getElementById('contactPhone').value.trim() : '';
       const email = document.getElementById('contactEmail') ? document.getElementById('contactEmail').value.trim() : '';
       const loanType = document.getElementById('contactLoanType') ? document.getElementById('contactLoanType').value : 'General Query';
+      const cibil = document.getElementById('contactCibil') ? document.getElementById('contactCibil').value : '';
       const message = document.getElementById('contactMessage') ? document.getElementById('contactMessage').value.trim() : '';
 
       handleLeadSuccess({
@@ -535,6 +579,8 @@ function initFormSubmissions() {
         email: email,
         loan_type: loanType,
         loanType: loanType,
+        cibil_score: cibil,
+        cibilScore: cibil,
         message: message
       });
     });
@@ -568,10 +614,12 @@ function handleLeadSuccess(data) {
   // Direct option to continue on WhatsApp
   const proceedToWhatsApp = confirm("Would you like to connect immediately with our senior advisor on WhatsApp for instant approval assistance?");
   if (proceedToWhatsApp) {
+    const cibilText = data.cibil_score ? `• CIBIL Score: ${data.cibil_score}\n` : '';
     const waText = encodeURIComponent(
       `Hello Loan81! I need assistance with a loan.\n\n` +
       `• Loan Type: ${data.loanType || 'General Loan'}\n` +
       `• Required Amount: ₹${data.amount ? formatIndianCurrency(data.amount) : 'Discuss on call'}\n` +
+      cibilText +
       `• City: ${data.city || 'Delhi NCR'}\n` +
       `• My Contact: ${data.phone}\n\nPlease share the best bank offers and eligibility.`
     );

@@ -60,9 +60,47 @@
         <div class="nav-cta-group">
           <a href="tel:8368250300" class="btn btn-secondary btn-sm"><i class="fa-solid fa-phone"></i> Call Advisor</a>
         </div>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open Mobile Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logo.png" alt="Loan81 Logo" style="height: 38px;">
+      </a>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-item"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="about.html" class="mobile-nav-item"><i class="fa-solid fa-circle-info"></i> About Us</a>
+        <a href="services.html" class="mobile-nav-item"><i class="fa-solid fa-hand-holding-dollar"></i> Loan Products</a>
+        <a href="calculator.html" class="mobile-nav-item"><i class="fa-solid fa-calculator"></i> EMI Calculator</a>
+        <a href="contact.html" class="mobile-nav-item"><i class="fa-solid fa-address-book"></i> Contact Us</a>
+        <a href="privacy-policy.html" class="mobile-nav-item"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a>
+        <a href="terms-conditions.html" class="mobile-nav-item active"><i class="fa-solid fa-file-contract"></i> Terms & Conditions</a>
+      </nav>
+      <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.15);">
+        <a href="tel:8368250300" class="drawer-contact-btn phone">
+          <i class="fa-solid fa-phone"></i>
+          <span>Call: +91 8368250300</span>
+        </a>
+        <a href="https://wa.me/918368250300?text=Hello%20Loan81!%20I%20have%20a%20query%20about%20your%20services." target="_blank" rel="noopener" class="drawer-contact-btn whatsapp" style="margin-top: 10px;">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp Advisor</span>
+        </a>
+      </div>
+    </div>
+  </aside>
 
   <!-- CONTENT -->
   <section class="page-hero">
@@ -121,8 +159,26 @@
         </div>
       </div>
     </div>
-  </footer>
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/918368250300?text=Hello%20Loan81!%20I%20have%20an%20enquiry%20regarding%20terms%20and%20loan%20services." target="_blank" rel="noopener" class="floating-whatsapp" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="badge">Online</span>
+  </a>
 
-  <script src="js/main.js?v=3.1"></script>
+  <!-- MOBILE BOTTOM STICKY BAR -->
+  <div class="mobile-sticky-bar">
+    <div class="mobile-bar-grid">
+      <a href="tel:8368250300" class="mobile-bar-btn call">
+        <i class="fa-solid fa-phone"></i>
+        <span>Call Now</span>
+      </a>
+      <a href="https://wa.me/918368250300?text=Hello%20Loan81!%20I%20need%20loan%20assistance." target="_blank" rel="noopener" class="mobile-bar-btn whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <script src="js/main.js?v=3.2"></script>
 </body>
 </html>

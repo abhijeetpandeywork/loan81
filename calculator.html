@@ -554,6 +554,16 @@
             <input type="number" id="wizardMonthlyIncome" class="form-control" placeholder="e.g. 45000" min="10000" required>
           </div>
           <div class="form-group">
+            <label class="form-label" for="wizardCibil">Estimated CIBIL / Credit Score</label>
+            <select id="wizardCibil" class="form-control" required>
+              <option value="750+" selected>750+ (Excellent / Instant Sanction)</option>
+              <option value="700-749">700 - 749 (Good)</option>
+              <option value="650-699">650 - 699 (Fair / Average)</option>
+              <option value="Below 650">Below 650 (Poor / Co-applicant Required)</option>
+              <option value="New to Credit">No CIBIL / New to Credit</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label class="form-label" for="wizardCity">City / Location</label>
             <input type="text" id="wizardCity" class="form-control" placeholder="e.g. New Delhi" required>
           </div>
@@ -573,7 +583,14 @@
             <label class="form-label" for="wizardPhone">Mobile Number (WhatsApp Enabled)</label>
             <input type="tel" id="wizardPhone" class="form-control" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
           </div>
-          <div style="display: flex; gap: 12px; margin-top: 24px;">
+          <!-- Default Checked Consent Checkbox -->
+          <div class="form-group" style="margin-top: 14px; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 8px;">
+            <input type="checkbox" id="wizardConsent" class="form-check-input" checked required style="margin-top: 3px; accent-color: var(--color-primary-blue); width: 16px; height: 16px; cursor: pointer; flex-shrink: 0;">
+            <label for="wizardConsent" style="font-size: 0.78rem; line-height: 1.4; color: var(--color-text-muted); cursor: pointer; margin-bottom: 0;">
+              I authorize <strong>Loan81</strong> and partner financial institutions to contact me via Call, SMS, WhatsApp, or Email regarding my loan enquiry. I accept the <a href="privacy-policy.html" target="_blank" style="color: var(--color-primary-blue); text-decoration: underline;">Privacy Policy</a> & <a href="terms-conditions.html" target="_blank" style="color: var(--color-primary-blue); text-decoration: underline;">Terms</a>.
+            </label>
+          </div>
+          <div style="display: flex; gap: 12px; margin-top: 18px;">
             <button type="button" class="btn btn-secondary wizard-prev-btn" style="flex: 1;">Back</button>
             <button type="submit" class="btn btn-primary" style="flex: 2;">Submit Inquiry</button>
           </div>
@@ -582,6 +599,6 @@
     </div>
   </div>
 
-  <script src="js/main.js?v=3.1"></script>
+  <script src="js/main.js?v=3.2"></script>
 </body>
 </html>

@@ -869,6 +869,11 @@ if ($is_logged_in && $pdo) {
 
                     <td>
                       <span class="badge badge-product"><?= htmlspecialchars($l['loan_type']) ?></span>
+                      <?php if (!empty($l['cibil_score'])): ?>
+                        <div style="font-size: 0.73rem; color: #0284c7; margin-top: 3px; font-weight: 600;">
+                          <i class="fa-solid fa-gauge-high"></i> CIBIL: <?= htmlspecialchars($l['cibil_score']) ?>
+                        </div>
+                      <?php endif; ?>
                     </td>
 
                     <td>
@@ -977,6 +982,10 @@ if ($is_logged_in && $pdo) {
               <div class="detail-item">
                 <strong>Employment Type</strong>
                 <span id="drawerEmployment">-</span>
+              </div>
+              <div class="detail-item">
+                <strong>Estimated CIBIL Score</strong>
+                <span id="drawerCibil" style="font-weight: 700; padding: 2px 8px; border-radius: 4px; display: inline-block; font-size: 0.85rem;">-</span>
               </div>
             </div>
           </div>
@@ -1105,6 +1114,29 @@ if ($is_logged_in && $pdo) {
       document.getElementById('drawerIncome').innerText = incVal > 0 ? '₹' + incVal.toLocaleString('en-IN') + ' / mo' : 'Not Specified';
 
       document.getElementById('drawerEmployment').innerText = lead.employment_type || 'Salaried / Self-Employed';
+
+      const cibilElem = document.getElementById('drawerCibil');
+      if (cibilElem) {
+        const cibil = lead.cibil_score || 'Not Specified';
+        cibilElem.innerText = cibil;
+        if (cibil.includes('750+') || cibil.toLowerCase().includes('excellent')) {
+          cibilElem.style.background = '#dcfce7';
+          cibilElem.style.color = '#15803d';
+        } else if (cibil.includes('700') || cibil.toLowerCase().includes('good')) {
+          cibilElem.style.background = '#e0f2fe';
+          cibilElem.style.color = '#0369a1';
+        } else if (cibil.includes('650') || cibil.toLowerCase().includes('average')) {
+          cibilElem.style.background = '#fef3c7';
+          cibilElem.style.color = '#b45309';
+        } else if (cibil.toLowerCase().includes('below') || cibil.toLowerCase().includes('poor')) {
+          cibilElem.style.background = '#fee2e2';
+          cibilElem.style.color = '#b91c1c';
+        } else {
+          cibilElem.style.background = '#f1f5f9';
+          cibilElem.style.color = '#475569';
+        }
+      }
+
       document.getElementById('drawerSource').innerText = lead.source || 'Website Lead';
       document.getElementById('drawerIp').innerText = lead.ip_address || 'Unknown';
 

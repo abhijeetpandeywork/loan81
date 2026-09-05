@@ -347,8 +347,26 @@
             </div>
 
             <div class="form-group">
+              <label class="form-label" for="contactCibil">Estimated CIBIL / Credit Score</label>
+              <select id="contactCibil" class="form-control">
+                <option value="750+" selected>750+ (Excellent)</option>
+                <option value="700-749">700 - 749 (Good)</option>
+                <option value="650-699">650 - 699 (Fair / Average)</option>
+                <option value="Below 650">Below 650 (Poor / Needs Co-applicant)</option>
+                <option value="New to Credit">No CIBIL / New to Credit</option>
+              </select>
+            </div>
+
+            <div class="form-group">
               <label class="form-label" for="contactMessage">Your Message / Requirement Details</label>
               <textarea id="contactMessage" class="form-control" rows="4" placeholder="Tell us about the required loan amount, employment type, or specific question..." required></textarea>
+            </div>
+
+            <div class="form-group" style="margin-top: 12px; margin-bottom: 14px; display: flex; align-items: flex-start; gap: 8px;">
+              <input type="checkbox" id="contactConsent" class="form-check-input" checked required style="margin-top: 2px; accent-color: var(--color-primary-blue); width: 16px; height: 16px; cursor: pointer; flex-shrink: 0;">
+              <label for="contactConsent" style="font-size: 0.78rem; line-height: 1.4; color: var(--color-text-muted); cursor: pointer; margin-bottom: 0;">
+                I authorize <strong>Loan81</strong> and partner financial institutions to contact me via Call, SMS, WhatsApp, or Email regarding my loan enquiry. I accept the <a href="privacy-policy.html" target="_blank" style="color: var(--color-primary-blue); text-decoration: underline;">Privacy Policy</a> & <a href="terms-conditions.html" target="_blank" style="color: var(--color-primary-blue); text-decoration: underline;">Terms</a>.
+              </label>
             </div>
 
             <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 10px;">
@@ -449,6 +467,6 @@
   </a>
 
   <!-- Master JavaScript -->
-  <script src="js/main.js?v=3.1"></script>
+  <script src="js/main.js?v=3.2"></script>
 </body>
 </html>

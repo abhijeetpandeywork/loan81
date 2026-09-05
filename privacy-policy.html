@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Privacy Policy | Loan81</title>
-  <meta name="description" content="Privacy Policy for Loan81. Learn how we handle, protect, and process user inquiries, personal identification documents, and financial data with 100% confidentiality.">
+  <title>Privacy Policy | Loan81 - Official Loan Advisory & Assistance</title>
+  <meta name="description" content="Official Privacy Policy for Loan81 (www.loan81.com). Learn how we collect, protect, process, and respect your personal and financial information in compliance with RBI guidelines and Google Ads financial policies.">
   <link rel="canonical" href="https://www.loan81.com/privacy-policy.html">
 
   <meta name="theme-color" content="#0E2954">
@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=3.0">
+  <link rel="stylesheet" href="css/style.css?v=3.2">
 </head>
 <body>
 
@@ -60,50 +60,346 @@
         <div class="nav-cta-group">
           <a href="tel:8368250300" class="btn btn-secondary btn-sm"><i class="fa-solid fa-phone"></i> Call Advisor</a>
         </div>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open Mobile Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- CONTENT -->
-  <section class="page-hero">
-    <div class="container">
-      <h1>Privacy Policy</h1>
-      <p>Effective Date: September 2026 | Loan81 (www.loan81.com)</p>
+  <!-- MOBILE DRAWER -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logo.png" alt="Loan81 Logo" style="height: 38px;">
+      </a>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-item"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="about.html" class="mobile-nav-item"><i class="fa-solid fa-circle-info"></i> About Us</a>
+        <a href="services.html" class="mobile-nav-item"><i class="fa-solid fa-hand-holding-dollar"></i> Loan Products</a>
+        <a href="calculator.html" class="mobile-nav-item"><i class="fa-solid fa-calculator"></i> EMI Calculator</a>
+        <a href="contact.html" class="mobile-nav-item"><i class="fa-solid fa-address-book"></i> Contact Us</a>
+        <a href="privacy-policy.html" class="mobile-nav-item active"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a>
+        <a href="terms-conditions.html" class="mobile-nav-item"><i class="fa-solid fa-file-contract"></i> Terms & Conditions</a>
+      </nav>
+      <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.15);">
+        <a href="tel:8368250300" class="drawer-contact-btn phone">
+          <i class="fa-solid fa-phone"></i>
+          <span>Call: +91 8368250300</span>
+        </a>
+        <a href="https://wa.me/918368250300?text=Hello%20Loan81!%20I%20have%20a%20query%20about%20your%20services." target="_blank" rel="noopener" class="drawer-contact-btn whatsapp" style="margin-top: 10px;">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp Advisor</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- HERO SECTION -->
+  <section class="page-hero" style="background: linear-gradient(135deg, #0E2954 0%, #176AB8 100%); padding: 50px 0 40px; color: #ffffff;">
+    <div class="container text-center">
+      <span class="hero-pill" style="background: rgba(255,255,255,0.15); color: #ffffff; border: 1px solid rgba(255,255,255,0.25); margin-bottom: 12px; display: inline-flex;">
+        <i class="fa-solid fa-shield-halved" style="color: #4ade80; margin-right: 6px;"></i> Legal & Data Protection
+      </span>
+      <h1 style="font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 800; margin-bottom: 12px;">Privacy Policy</h1>
+      <p style="font-size: 1rem; color: #cbd5e1; max-width: 680px; margin: 0 auto;">
+        <strong>Effective Date:</strong> 1 August 2026 &nbsp;|&nbsp; <strong>Last Updated:</strong> 1 August 2026<br>
+        Loan81 (Platform: <a href="https://www.loan81.com" style="color: #60a5fa; text-decoration: underline;">www.loan81.com</a>)
+      </p>
     </div>
   </section>
 
-  <section class="content-block">
-    <div class="container container-narrow" style="font-size: 1rem; line-height: 1.8; color: var(--color-navy-dark);">
-      <h2 style="font-size: 1.5rem; margin-bottom: 12px;">1. Information We Collect</h2>
-      <p style="color: var(--color-text-muted); margin-bottom: 20px;">
-        When you submit an inquiry on Loan81, we may collect information such as your full name, contact mobile number, email address, city/location, loan requirement details, estimated monthly income, and employment category. If you proceed with assisted application processing, we may collect KYC documentation (such as PAN, Aadhaar, salary slips, and bank statements) solely for forwarding to your chosen partner bank or NBFC with your express consent.
-      </p>
+  <!-- CONTENT BLOCK -->
+  <section class="content-block" style="padding: 50px 0 80px; background: #f8fafc;">
+    <div class="container container-narrow">
+      
+      <!-- GOOGLE ADS & STATUTORY COMPLIANCE CALLOUT -->
+      <div style="background: #ffffff; border-left: 5px solid var(--color-primary-blue); padding: 24px; border-radius: 12px; box-shadow: var(--shadow-sm); margin-bottom: 35px; border: 1px solid #e2e8f0; border-left-width: 5px;">
+        <h4 style="color: var(--color-primary-navy); font-size: 1.1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-circle-info" style="color: var(--color-primary-blue);"></i> Notice on Advisory Operations & Google Ads Compliance
+        </h4>
+        <p style="font-size: 0.92rem; line-height: 1.65; color: #475569; margin-bottom: 12px;">
+          This Privacy Policy explains how <strong>Loan81</strong> ("Loan81", "we", "us", or "our") collects, uses, stores, processes, and shares personal information when you access or use our website <a href="https://www.loan81.com" target="_blank" style="color: var(--color-primary-blue); font-weight: 600;">www.loan81.com</a>, submit an enquiry, contact us, or use any of our advisory and assistance services (collectively, the "Platform").
+        </p>
+        <p style="font-size: 0.92rem; line-height: 1.65; color: #475569; margin-bottom: 0;">
+          We respect your privacy and are committed to handling your personal information responsibly and in accordance with applicable laws, including the Digital Personal Data Protection Act (DPDP), Reserve Bank of India (RBI) Digital Lending Guidelines, and Google Ads Financial Services Policies.
+        </p>
+      </div>
 
-      <h2 style="font-size: 1.5rem; margin-bottom: 12px;">2. How We Use Your Information</h2>
-      <p style="color: var(--color-text-muted); margin-bottom: 20px;">
-        We use the collected information strictly to:
-      </p>
-      <ul style="list-style: disc; padding-left: 20px; color: var(--color-text-muted); margin-bottom: 20px;">
-        <li>Assess and identify suitable lending partners matching your credit and income profile.</li>
-        <li>Facilitate communication between you and verified lending institutions.</li>
-        <li>Provide ongoing loan advisory, updates, and customer support.</li>
-        <li>Prevent fraudulent loan inquiries and comply with statutory financial norms.</li>
-      </ul>
+      <div style="background: #ffffff; padding: 36px; border-radius: 16px; box-shadow: var(--shadow-sm); border: 1px solid #e2e8f0;">
 
-      <h2 style="font-size: 1.5rem; margin-bottom: 12px;">3. Data Sharing & Disclosure</h2>
-      <p style="color: var(--color-text-muted); margin-bottom: 20px;">
-        Loan81 does not sell, rent, or trade your personal data to unauthorized third parties or marketing brokers. Your documents and data are shared strictly with regulated banks, NBFCs, or verified lending partners for the purpose of underwriting and loan sanctioning with your knowledge.
-      </p>
+        <!-- 1. ABOUT LOAN81 -->
+        <div style="margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9;">
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">1</span>
+            About Loan81
+          </h2>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.96rem;">
+            Loan81 operates as a loan advisory, loan assistance, and loan facilitation platform. Loan81 may assist customers in understanding available loan options and may facilitate communication or enquiries between customers and banks, Non-Banking Financial Companies (NBFCs), financial institutions, lending partners, or other relevant service providers. 
+          </p>
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; padding: 14px 18px; border-radius: 8px; margin-top: 14px;">
+            <strong style="color: #1e3a8a; font-size: 0.92rem;"><i class="fa-solid fa-handshake-angle"></i> Statutory Status & Non-Lender Disclosure:</strong>
+            <p style="color: #1e40af; font-size: 0.9rem; line-height: 1.6; margin-top: 6px; margin-bottom: 0;">
+              Loan81 is not itself a bank, NBFC, or lender and does not directly provide, sanction, approve, or disburse loans. Any loan approval, sanction, loan amount, interest rate, tenure, fees, repayment terms, documentation requirements, and other conditions are determined solely by the relevant lender or financial institution.
+            </p>
+          </div>
+        </div>
 
-      <h2 style="font-size: 1.5rem; margin-bottom: 12px;">4. Data Security</h2>
-      <p style="color: var(--color-text-muted); margin-bottom: 20px;">
-        We implement robust administrative, technical, and physical safeguards to protect your personal and financial information against unauthorized access, loss, or misuse.
-      </p>
+        <!-- 2. INFORMATION WE COLLECT -->
+        <div style="margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9;">
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">2</span>
+            Information We Collect
+          </h2>
+          <div style="margin-bottom: 16px;">
+            <h4 style="font-size: 1.05rem; color: #1e293b; margin-bottom: 8px;">A. Information You Provide:</h4>
+            <p style="color: #475569; line-height: 1.75; font-size: 0.95rem;">
+              Full name, mobile number, email address, age or date of birth, residential or business location, employment details, business details, monthly income or business turnover, loan amount required, purpose of the loan, existing loan information, credit-related information voluntarily provided by you (such as estimated CIBIL/credit score range), identity or KYC-related information where required, documents submitted in connection with a loan enquiry, information provided through enquiry forms, telephone calls, WhatsApp, email, or other communication channels, and any other information voluntarily provided.
+            </p>
+          </div>
+          <div>
+            <h4 style="font-size: 1.05rem; color: #1e293b; margin-bottom: 8px;">B. Information Collected Automatically:</h4>
+            <p style="color: #475569; line-height: 1.75; font-size: 0.95rem;">
+              IP address, browser type, device type, operating system, website pages visited, date and time of access, referring website, approximate usage information, cookies, and similar technologies.
+            </p>
+          </div>
+        </div>
 
-      <h2 style="font-size: 1.5rem; margin-bottom: 12px;">5. Contact Regarding Privacy</h2>
-      <p style="color: var(--color-text-muted); margin-bottom: 20px;">
-        If you have any questions about this Privacy Policy or wish to modify your submitted details, please write to us at <a href="mailto:loan81.info@gmail.com" style="color: var(--color-primary-blue);">loan81.info@gmail.com</a> or visit our office at A-1/1, Rama Park, Dwarka Mor, New Delhi 110059.
-      </p>
+        <!-- 3. HOW WE USE YOUR INFORMATION -->
+        <div style="margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9;">
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">3</span>
+            How We Use Your Information
+          </h2>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem; margin-bottom: 12px;">
+            We use the personal and financial information collected for the following legitimate business and advisory purposes:
+          </p>
+          <ul style="list-style: none; padding-left: 0; color: #475569; font-size: 0.95rem; line-height: 1.7;">
+            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--color-teal-accent); margin-top: 4px;"></i> Responding to loan enquiries and assessing user requirements.</li>
+            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--color-teal-accent); margin-top: 4px;"></i> Understanding specific financial needs and identifying potentially suitable loan products.</li>
+            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--color-teal-accent); margin-top: 4px;"></i> Assisting with documentation, pre-eligibility verification, and the application process.</li>
+            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--color-teal-accent); margin-top: 4px;"></i> Facilitating communication with partner banks, NBFCs, and lending partners.</li>
+            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--color-teal-accent); margin-top: 4px;"></i> Contacting you regarding your enquiry via Phone, WhatsApp, SMS, or Email.</li>
+            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--color-teal-accent); margin-top: 4px;"></i> Providing ongoing loan advisor updates, status reports, and customer support.</li>
+            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--color-teal-accent); margin-top: 4px;"></i> Maintaining internal records, preventing fraudulent inquiries, and ensuring platform safety.</li>
+            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--color-teal-accent); margin-top: 4px;"></i> Complying with applicable statutory, regulatory, and legal requirements.</li>
+          </ul>
+        </div>
+
+        <!-- 4. LOAN ENQUIRIES AND SHARING -->
+        <div style="margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9;">
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">4</span>
+            Loan Enquiries and Sharing of Information
+          </h2>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem;">
+            Submitting an enquiry authorizes us, subject to law and your explicit consent, to use your information to process, evaluate, and facilitate it. We may share relevant information with banks, NBFCs, financial institutions, or lending partners relevant to your requirements. 
+          </p>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem; margin-bottom: 0;">
+            <strong>No Guarantee of Approval:</strong> Submitting an enquiry does not guarantee loan approval, sanction, disbursement, or any particular loan terms. Final terms are governed exclusively by the credit appraisal and underwriting policies of the respective lending institution.
+          </p>
+        </div>
+
+        <!-- 5. INFORMATION SHARING -->
+        <div style="margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9;">
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">5</span>
+            Information Sharing
+          </h2>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem;">
+            We may share information with banks, NBFCs, financial institutions, lending partners, authorized representatives, service providers assisting our operations, technology/hosting providers, communication/support providers, analytics providers, professional advisors, and government/regulatory/law-enforcement authorities where required by law. 
+          </p>
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 12px 16px; border-radius: 8px; color: #166534; font-weight: 600; font-size: 0.92rem;">
+            <i class="fa-solid fa-lock"></i> Strict Non-Sale Pledge: We do not intend to sell your personal information as a standalone commodity.
+          </div>
+        </div>
+
+        <!-- 6. CONSENT -->
+        <div style="margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9;">
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">6</span>
+            Consent & Communication Permissions
+          </h2>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem;">
+            Where law requires consent, we will seek it — via forms, checkboxes, electronic communication, telephone, or other legally permissible methods. By checking our consent boxes and submitting your telephone number on our forms, you override any national Do Not Call / NDNC / DND registration solely for communications concerning your loan inquiry.
+          </p>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem; margin-bottom: 0;">
+            You may withdraw consent at any time by writing to <a href="mailto:loan81.info@gmail.com" style="color: var(--color-primary-blue); font-weight: 600;">loan81.info@gmail.com</a>, subject to applicable law, though this may affect our ability to continue processing or facilitating your loan enquiry.
+          </p>
+        </div>
+
+        <!-- 7. COOKIES -->
+        <div style="margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9;">
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">7</span>
+            Cookies and Analytics
+          </h2>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem; margin-bottom: 0;">
+            Cookies are used for website functionality, remembering preferences, analytics, understanding user behavior, improving performance/experience, and (where applicable) marketing measurement. You can configure or disable cookies via your browser settings, although certain interactive website features may not operate optimally as a result.
+          </p>
+        </div>
+
+        <!-- 8. DATA SECURITY -->
+        <div style="margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9;">
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">8</span>
+            Data Security & Anti-Fraud Advisory
+          </h2>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem;">
+            Reasonable technical and organizational measures (including 256-bit SSL encryption and restricted role-based database access) are used to safeguard data, though no electronic transmission or storage system is 100% immune to potential risks.
+          </p>
+          <div style="background: #fff1f2; border: 1px solid #fecdd3; padding: 16px; border-radius: 8px; color: #9f1239; margin-top: 10px;">
+            <strong style="display: block; font-size: 0.95rem; margin-bottom: 4px;">
+              <i class="fa-solid fa-triangle-exclamation"></i> Critical Security Warning:
+            </strong>
+            <span style="font-size: 0.92rem; line-height: 1.6; display: block;">
+              Loan81 will <strong>NEVER</strong> ask you for any One-Time Password (OTP), UPI PIN, ATM PIN, internet banking password, CVV, card PIN, or similar banking credentials. Never share these sensitive credentials with anyone claiming to guarantee or sanction a loan.
+            </span>
+          </div>
+        </div>
+
+        <!-- 9. DATA RETENTION -->
+        <div style="margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9;">
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">9</span>
+            Data Retention
+          </h2>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem; margin-bottom: 0;">
+            Customer information is retained as long as reasonably necessary for services, customer records, dispute resolution, fraud prevention, legal/regulatory compliance, agreement enforcement, and legitimate business interests. When information is no longer needed, it is deleted, anonymized, or securely disposed of.
+          </p>
+        </div>
+
+        <!-- 10. YOUR RIGHTS -->
+        <div style="margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9;">
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">10</span>
+            Your Rights
+          </h2>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem; margin-bottom: 0;">
+            Subject to applicable law: you have the right to access, request correction, request deletion (where legally permissible and not mandated by loan audit trails), withdraw communication consent, file complaints, and exercise other rights under applicable data-protection laws. To exercise these rights, email us at <a href="mailto:loan81.info@gmail.com" style="color: var(--color-primary-blue); font-weight: 600;">loan81.info@gmail.com</a>.
+          </p>
+        </div>
+
+        <!-- 11. THIRD-PARTY WEBSITES -->
+        <div style="margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9;">
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">11</span>
+            Third-Party Websites and Services
+          </h2>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem; margin-bottom: 0;">
+            Our Platform may include links to third-party portals, banking application gateways, or partner services. We do not control third-party privacy practices linked from our Platform; please review their independent privacy policies before sharing personal information with them.
+          </p>
+        </div>
+
+        <!-- 12. COMMUNICATION WITH CUSTOMERS -->
+        <div style="margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9;">
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">12</span>
+            Communication with Customers
+          </h2>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem; margin-bottom: 0;">
+            Loan81 communicates with customers via Phone Call (<a href="tel:8368250300" style="color: var(--color-primary-blue); font-weight: 600;">8368250300</a>), SMS, WhatsApp, Email (<a href="mailto:loan81.info@gmail.com" style="color: var(--color-primary-blue); font-weight: 600;">loan81.info@gmail.com</a>), or other permissible digital channels. Promotional communications are subject to your preferences and applicable law; opt-out is available on simple written request.
+          </p>
+        </div>
+
+        <!-- 13. CHILDREN'S PRIVACY -->
+        <div style="margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9;">
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">13</span>
+            Children's Privacy
+          </h2>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem; margin-bottom: 0;">
+            The Platform is intended exclusively for adults (18 years and above) legally capable of entering binding financial contracts. We do not knowingly collect personal or financial data from minors for loan advisory purposes.
+          </p>
+        </div>
+
+        <!-- 14. CHANGES TO THIS PRIVACY POLICY -->
+        <div style="margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9;">
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">14</span>
+            Changes to This Privacy Policy
+          </h2>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem; margin-bottom: 0;">
+            This Privacy Policy is updated periodically to reflect updates in our advisory services, underlying technology, data practices, or regulatory mandates. Changes become effective immediately upon being republished here with a revised "Last Updated" timestamp.
+          </p>
+        </div>
+
+        <!-- 15. CONTACT US -->
+        <div style="margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9;">
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">15</span>
+            Contact Us & Grievance Redressal
+          </h2>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem; margin-bottom: 14px;">
+            For questions, data access requests, or grievance redressal, please contact:
+          </p>
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+            <div style="font-weight: 700; color: var(--color-primary-navy); font-size: 1.1rem; margin-bottom: 8px;">Loan81 Advisory Desk</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; font-size: 0.92rem; color: #475569;">
+              <div><strong>Website:</strong> <a href="https://www.loan81.com" target="_blank" style="color: var(--color-primary-blue);">www.loan81.com</a></div>
+              <div><strong>Telephone / WhatsApp:</strong> <a href="tel:8368250300" style="color: var(--color-primary-blue); font-weight: 600;">+91 8368250300</a></div>
+              <div><strong>Official Email:</strong> <a href="mailto:loan81.info@gmail.com" style="color: var(--color-primary-blue);">loan81.info@gmail.com</a></div>
+              <div><strong>Physical Office:</strong> Dwarka Mor, New Delhi 110059, India</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 16. IMPORTANT LOAN DISCLAIMER & GOOGLE ADS FINANCIAL DISCLOSURES -->
+        <div>
+          <h2 style="font-size: 1.35rem; color: var(--color-primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--color-primary-light); color: var(--color-primary-blue); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800;">16</span>
+            Important Loan Disclaimer & Financial Policy Disclosures
+          </h2>
+          <p style="color: #475569; line-height: 1.75; font-size: 0.95rem;">
+            Loan81 is a loan advisory and assistance facilitation platform. Loan81 does not itself provide, sanction, approve, or disburse loans. Loan approval and final terms are determined solely by the respective bank, NBFC, or lender. Review the loan agreement, Key Facts Statement (KFS), interest rate, processing fees, and other terms carefully before accepting any loan.
+          </p>
+
+          <!-- Google Ads Compliance Specific Table & Disclosures -->
+          <div style="background: #ffffff; border: 2px solid #e0f2fe; border-radius: 12px; padding: 20px; margin-top: 20px;">
+            <h4 style="color: var(--color-primary-navy); font-size: 1rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-scale-balanced" style="color: var(--color-primary-blue);"></i> Google Ads Financial Services Compliance Summary
+            </h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; font-size: 0.88rem; color: #475569;">
+              <div style="background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                <strong style="color: var(--color-primary-navy); display: block; margin-bottom: 4px;">Loan Repayment Period:</strong>
+                Minimum period: 6 Months (180 Days)<br>
+                Maximum period: 60 Months (5 Years) for Personal/Business Loans; up to 30 Years for Home Loans.
+              </div>
+              <div style="background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                <strong style="color: var(--color-primary-navy); display: block; margin-bottom: 4px;">Annual Percentage Rate (APR):</strong>
+                Indicative APR ranges from <strong>10.49% p.a. to 24% p.a.</strong> depending on applicant credit profile, loan product, and lender underwriting criteria.
+              </div>
+              <div style="background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                <strong style="color: var(--color-primary-navy); display: block; margin-bottom: 4px;">Payday Lending Prohibition:</strong>
+                Loan81 strictly does <strong>NOT</strong> promote, facilitate, or offer short-term personal loans requiring full repayment in 60 days or less.
+              </div>
+              <div style="background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                <strong style="color: var(--color-primary-navy); display: block; margin-bottom: 4px;">Zero Upfront Fee Guarantee:</strong>
+                Loan81 does not charge any upfront cash or fee for issuing loan advice or eligibility checks.
+              </div>
+            </div>
+
+            <div style="margin-top: 16px; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 14px; border-radius: 8px; font-size: 0.88rem; color: #166534;">
+              <strong>Representative Loan Cost Example:</strong> For a Personal Loan of ₹1,00,000 sanctioned for a tenure of 12 months at an interest rate of 10.5% p.a. with a processing fee of 1% (₹1,000 + GST):<br>
+              • Monthly EMI: <strong>₹8,815</strong><br>
+              • Total Interest Payable: <strong>₹5,779</strong><br>
+              • Total Amount Repaid: <strong>₹1,05,779</strong> (excluding statutory taxes and processing fee).
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 30px; font-size: 0.9rem; color: var(--color-text-muted);">
+        By accessing or using the Platform, you acknowledge and agree to this Privacy Policy.
+      </div>
     </div>
   </section>
 
@@ -111,19 +407,93 @@
   <footer class="main-footer">
     <div class="container">
       <div class="footer-disclaimer-box">
-        <strong>IMPORTANT STATUTORY DISCLAIMER:</strong> Loan81 operates strictly as a loan advisory and assistance facilitation platform. Loan81 is NOT a bank, NBFC, or direct lender.
+        <strong>IMPORTANT STATUTORY & GOOGLE ADS DISCLAIMER:</strong> Loan81 (www.loan81.com) operates strictly as a loan advisory, facilitation, and lead assistance platform connecting prospective borrowers with regulated commercial banks and NBFCs. Loan81 is NOT a bank, NBFC, or direct lender and does not issue or disburse loans directly. Loan approval, interest rates, tenure (minimum 6 months to 60 months), processing fees, and terms are determined exclusively by the respective lending institution. Loan81 does not offer payday loans or loans requiring full repayment in 60 days or less. Loan81 does not charge any upfront fees from borrowers.
       </div>
+
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo-wrap">
+            <img src="assets/images/logo.png" alt="Loan81 Logo" style="height: 42px; width: auto;">
+          </div>
+          <p class="footer-about">
+            Making the loan journey simpler, transparent, and hassle-free through unbiased guidance and partnerships with 40+ leading financial institutions across India.
+          </p>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:8368250300">+91 8368250300</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:loan81.info@gmail.com">loan81.info@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Loan Products</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#personal">Personal Loans</a></li>
+            <li><a href="services.html#business">Business Loans</a></li>
+            <li><a href="services.html#home">Home Loans</a></li>
+            <li><a href="services.html#lap">Loan Against Property</a></li>
+            <li><a href="services.html#debt">Debt Consolidation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="calculator.html">EMI Calculator</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Advisor Desk</h4>
+          <p style="font-size: 0.88rem; color: #94a3b8; line-height: 1.6; margin-bottom: 14px;">
+            Need quick guidance on eligibility or interest rates? Chat directly with our senior financial advisor on WhatsApp.
+          </p>
+          <a href="https://wa.me/918368250300?text=Hello%20Loan81!%20I%20have%20an%20enquiry%20regarding%20loan%20options." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm" style="width: 100%; justify-content: center;">
+            <i class="fa-brands fa-whatsapp"></i> Chat with Senior Advisor
+          </a>
+        </div>
+      </div>
+
       <div class="footer-bottom">
         <div>&copy; 2026 Loan81 (www.loan81.com). All Rights Reserved.</div>
         <div class="footer-bottom-links">
           <a href="privacy-policy.html">Privacy Policy</a>
           <a href="terms-conditions.html">Terms & Conditions</a>
-          <a href="contact.html">Contact</a>
+          <a href="contact.html">Contact Us</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js?v=3.1"></script>
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/918368250300?text=Hello%20Loan81!%20I%20have%20an%20enquiry%20regarding%20your%20loan%20services." target="_blank" rel="noopener" class="floating-whatsapp" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="badge">Online</span>
+  </a>
+
+  <!-- MOBILE BOTTOM STICKY BAR -->
+  <div class="mobile-sticky-bar">
+    <div class="mobile-bar-grid">
+      <a href="tel:8368250300" class="mobile-bar-btn call">
+        <i class="fa-solid fa-phone"></i>
+        <span>Call Now</span>
+      </a>
+      <a href="https://wa.me/918368250300?text=Hello%20Loan81!%20I%20need%20loan%20assistance." target="_blank" rel="noopener" class="mobile-bar-btn whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Master JavaScript -->
+  <script src="js/main.js?v=3.2"></script>
 </body>
 </html>

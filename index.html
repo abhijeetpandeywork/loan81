@@ -418,6 +418,17 @@
           </div>
 
           <div class="form-group" style="margin-bottom: 0;">
+            <label for="heroCibil" class="form-label">CIBIL Score</label>
+            <select id="heroCibil" class="form-control" required>
+              <option value="750+" selected>750+ (Excellent)</option>
+              <option value="700-749">700 - 749 (Good)</option>
+              <option value="650-699">650 - 699 (Average)</option>
+              <option value="Below 650">Below 650</option>
+              <option value="New to Credit">New to Credit</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
             <label for="heroCity" class="form-label">City / Location</label>
             <input type="text" id="heroCity" class="form-control" placeholder="e.g. New Delhi" required value="New Delhi">
           </div>
@@ -429,8 +440,15 @@
           </div>
         </form>
 
-        <p class="form-footnote" style="margin-top: 12px; margin-bottom: 0;">
-          <i class="fa-solid fa-lock" style="color: var(--color-green-success);"></i> 256-Bit SSL Encrypted. Your details are strictly confidential. By submitting, you agree to our <a href="terms-conditions.html">Terms</a> & <a href="privacy-policy.html">Privacy Policy</a>.
+        <div style="margin-top: 12px; display: flex; align-items: flex-start; gap: 8px;">
+          <input type="checkbox" id="heroConsent" class="form-check-input" checked required style="margin-top: 2px; accent-color: var(--color-primary-blue); width: 16px; height: 16px; cursor: pointer; flex-shrink: 0;">
+          <label for="heroConsent" style="font-size: 0.76rem; line-height: 1.4; color: var(--color-text-muted); cursor: pointer; margin-bottom: 0;">
+            I authorize <strong>Loan81</strong> and partner banks to contact me via Call, SMS, WhatsApp, or Email regarding my loan enquiry. I accept the <a href="privacy-policy.html" target="_blank" style="color: var(--color-primary-blue); text-decoration: underline;">Privacy Policy</a> & <a href="terms-conditions.html" target="_blank" style="color: var(--color-primary-blue); text-decoration: underline;">Terms</a>.
+          </label>
+        </div>
+
+        <p class="form-footnote" style="margin-top: 8px; margin-bottom: 0;">
+          <i class="fa-solid fa-lock" style="color: var(--color-green-success);"></i> 256-Bit SSL Encrypted. Your details are strictly confidential.
         </p>
       </div>
     </div>
@@ -593,12 +611,166 @@
           <ul class="product-features-mini">
             <li><i class="fa-solid fa-circle-check"></i> Amount: ₹10,000 to ₹1,00,000</li>
             <li><i class="fa-solid fa-circle-check"></i> Rapid 24-48 hour turnaround</li>
-            <li><i class="fa-solid fa-circle-check"></i> Flexible short tenure (60 to 180 days)</li>
+            <li><i class="fa-solid fa-circle-check"></i> Flexible tenure: 6 to 24 Months</li>
           </ul>
           <div class="product-card-footer">
             <div class="product-rate-badge">Disbursal: <span>Same / Next Day</span></div>
             <button class="btn btn-primary btn-sm open-lead-modal" data-loan-type="Short Term Loan">Apply Now</button>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEDICATED VISIBLE HOMEPAGE ENQUIRY FORM SECTION -->
+  <section class="section-padding home-enquiry-section" id="apply-now" style="background: linear-gradient(180deg, #f8fafc 0%, #edf4fc 100%); padding: 70px 0; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+    <div class="container">
+      <div style="max-width: 1160px; margin: 0 auto; background: #ffffff; border-radius: 20px; box-shadow: 0 10px 40px rgba(14, 41, 84, 0.08); border: 1px solid #dbeafe; overflow: hidden;">
+        <div style="display: grid; grid-template-columns: 1fr 1.25fr; min-height: 540px;" class="enquiry-split-grid">
+          
+          <!-- Left Advisor Column -->
+          <div style="background: linear-gradient(145deg, #0E2954 0%, #176AB8 100%); padding: 44px 36px; color: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="hero-pill" style="background: rgba(255,255,255,0.15); color: #ffffff; border: 1px solid rgba(255,255,255,0.25); margin-bottom: 16px;">
+                <span class="dot" style="background: #4ade80;"></span> 100% Free Advisory • Zero Upfront Fees
+              </span>
+              <h3 style="font-size: clamp(1.6rem, 2.4vw, 2.2rem); font-weight: 800; line-height: 1.25; margin-bottom: 14px; color: #ffffff;">
+                Apply for Loan Assistance with India's Top Lenders
+              </h3>
+              <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.65; margin-bottom: 24px;">
+                Share your requirement below. Our senior loan advisors will review your income profile, check multiple bank eligibility criteria, and contact you with tailored sanction offers.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px;">
+                <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 0.92rem; color: #e2e8f0;">
+                  <i class="fa-solid fa-circle-check" style="color: #4ade80; font-size: 1.1rem; margin-top: 2px;"></i>
+                  <span><strong>40+ Partner Banks & NBFCs:</strong> SBI, HDFC, ICICI, Axis, Kotak, Tata Capital, Bajaj Finserv & more.</span>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 0.92rem; color: #e2e8f0;">
+                  <i class="fa-solid fa-circle-check" style="color: #4ade80; font-size: 1.1rem; margin-top: 2px;"></i>
+                  <span><strong>Best Rate Guarantee:</strong> Lowest ROI comparison matching your CIBIL score.</span>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 0.92rem; color: #e2e8f0;">
+                  <i class="fa-solid fa-circle-check" style="color: #4ade80; font-size: 1.1rem; margin-top: 2px;"></i>
+                  <span><strong>Fast In-Principle Sanction:</strong> Rapid turnaround within 24–48 working hours.</span>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 12px; font-size: 0.92rem; color: #e2e8f0;">
+                  <i class="fa-solid fa-circle-check" style="color: #4ade80; font-size: 1.1rem; margin-top: 2px;"></i>
+                  <span><strong>Zero Impact on CIBIL:</strong> Preliminary eligibility assessment without hard credit bureau pulls.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Urgent Call / WhatsApp Box -->
+            <div style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 18px; backdrop-filter: blur(10px);">
+              <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #93c5fd; font-weight: 700; margin-bottom: 6px;">Need Urgent Assistance?</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <a href="tel:8368250300" class="btn btn-sm" style="background: #ffffff; color: #0E2954; font-weight: 700; flex: 1; justify-content: center;">
+                  <i class="fa-solid fa-phone"></i> +91 8368250300
+                </a>
+                <a href="https://wa.me/918368250300?text=Hello%20Loan81!%20I%20need%20quick%20loan%20assistance." target="_blank" rel="noopener" class="btn btn-sm btn-whatsapp" style="flex: 1; justify-content: center;">
+                  <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Application Form -->
+          <div style="padding: 38px 36px;">
+            <div style="margin-bottom: 22px;">
+              <h4 style="font-size: 1.4rem; color: var(--color-primary-navy); margin-bottom: 4px; font-weight: 800;">
+                Direct Loan Application
+              </h4>
+              <p style="font-size: 0.88rem; color: var(--color-text-muted);">
+                Fill in your details for an immediate rate quote and tailored bank comparison.
+              </p>
+            </div>
+
+            <form id="homeFullEnquiryForm">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;" class="form-row-2">
+                <div class="form-group" style="margin-bottom: 12px;">
+                  <label class="form-label" for="homeFullName">Full Name *</label>
+                  <input type="text" id="homeFullName" class="form-control" placeholder="As per PAN Card" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 12px;">
+                  <label class="form-label" for="homePhone">Mobile Number *</label>
+                  <input type="tel" id="homePhone" class="form-control" placeholder="10-digit mobile" pattern="[0-9]{10}" required>
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;" class="form-row-2">
+                <div class="form-group" style="margin-bottom: 12px;">
+                  <label class="form-label" for="homeLoanType">Loan Product *</label>
+                  <select id="homeLoanType" class="form-control" required>
+                    <option value="Personal Loan" selected>Personal Loan</option>
+                    <option value="Business Loan">Business Loan</option>
+                    <option value="Home Loan">Home Loan</option>
+                    <option value="Loan Against Property">Loan Against Property (LAP)</option>
+                    <option value="Debt Consolidation">Debt Consolidation</option>
+                    <option value="Car / Vehicle Loan">Vehicle / Auto Loan</option>
+                  </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 12px;">
+                  <label class="form-label" for="homeLoanAmount">Required Loan Amount (₹) *</label>
+                  <input type="number" id="homeLoanAmount" class="form-control" placeholder="e.g. 500000" min="50000" step="10000" value="500000" required>
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;" class="form-row-2">
+                <div class="form-group" style="margin-bottom: 12px;">
+                  <label class="form-label" for="homeEmployment">Employment Type *</label>
+                  <select id="homeEmployment" class="form-control" required>
+                    <option value="Salaried Employee" selected>Salaried Employee</option>
+                    <option value="Self Employed Professional">Self-Employed Professional (Doctor/CA/Lawyer)</option>
+                    <option value="Business Owner / Trader">Business Owner / Trader</option>
+                    <option value="Manufacturer / Enterprise">Manufacturer / Enterprise</option>
+                  </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 12px;">
+                  <label class="form-label" for="homeMonthlyIncome">Monthly Income / Turnover (₹) *</label>
+                  <input type="number" id="homeMonthlyIncome" class="form-control" placeholder="e.g. 50000" min="15000" step="5000" value="50000" required>
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;" class="form-row-2">
+                <div class="form-group" style="margin-bottom: 12px;">
+                  <label class="form-label" for="homeCibil">Estimated CIBIL Score *</label>
+                  <select id="homeCibil" class="form-control" required>
+                    <option value="750+" selected>750+ (Excellent / Instant Sanction)</option>
+                    <option value="700-749">700 - 749 (Good)</option>
+                    <option value="650-699">650 - 699 (Fair / Average)</option>
+                    <option value="Below 650">Below 650 (Low / Co-applicant Required)</option>
+                    <option value="New to Credit">No CIBIL / New to Credit</option>
+                  </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 12px;">
+                  <label class="form-label" for="homeCity">City / Location *</label>
+                  <input type="text" id="homeCity" class="form-control" placeholder="e.g. New Delhi, Noida, Gurugram" value="New Delhi" required>
+                </div>
+              </div>
+
+              <!-- Default Checked Consent Checkbox -->
+              <div class="form-group" style="margin-top: 14px; margin-bottom: 16px; display: flex; align-items: flex-start; gap: 10px;">
+                <input type="checkbox" id="homeConsent" class="form-check-input" checked required style="margin-top: 3px; accent-color: var(--color-primary-blue); width: 18px; height: 18px; cursor: pointer; flex-shrink: 0;">
+                <label for="homeConsent" style="font-size: 0.8rem; line-height: 1.45; color: var(--color-text-muted); cursor: pointer; margin-bottom: 0;">
+                  I authorize <strong>Loan81</strong> and its partner financial institutions to contact me via Call, SMS, WhatsApp, or Email regarding my loan enquiry. I agree to the <a href="privacy-policy.html" target="_blank" style="color: var(--color-primary-blue); text-decoration: underline;">Privacy Policy</a> and <a href="terms-conditions.html" target="_blank" style="color: var(--color-primary-blue); text-decoration: underline;">Terms</a>.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block btn-lg" style="padding: 14px; font-weight: 700; font-size: 1.05rem;">
+                <i class="fa-solid fa-paper-plane"></i> Submit Free Loan Application
+              </button>
+
+              <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 12px; font-size: 0.78rem; color: #64748b;">
+                <span><i class="fa-solid fa-lock" style="color: var(--color-green-success);"></i> 256-Bit SSL Encrypted</span>
+                <span>•</span>
+                <span><i class="fa-solid fa-shield-halved" style="color: var(--color-primary-blue);"></i> 100% Confidential</span>
+                <span>•</span>
+                <span><i class="fa-solid fa-ban" style="color: #ef4444;"></i> Zero Spam</span>
+              </div>
+            </form>
+          </div>
+
         </div>
       </div>
     </div>
@@ -1467,6 +1639,17 @@
           </div>
 
           <div class="form-group">
+            <label class="form-label" for="wizardCibil">Estimated CIBIL / Credit Score</label>
+            <select id="wizardCibil" class="form-control" required>
+              <option value="750+" selected>750+ (Excellent / Instant Sanction)</option>
+              <option value="700-749">700 - 749 (Good)</option>
+              <option value="650-699">650 - 699 (Fair / Average)</option>
+              <option value="Below 650">Below 650 (Poor / Co-applicant Required)</option>
+              <option value="New to Credit">No CIBIL / New to Credit</option>
+            </select>
+          </div>
+
+          <div class="form-group">
             <label class="form-label" for="wizardCity">City / Resident Location</label>
             <input type="text" id="wizardCity" class="form-control" placeholder="e.g. New Delhi, Dwarka, Noida" required>
           </div>
@@ -1499,7 +1682,15 @@
             <input type="email" id="wizardEmail" class="form-control" placeholder="name@example.com">
           </div>
 
-          <div style="display: flex; gap: 12px; margin-top: 24px;">
+          <!-- Default Checked Consent Checkbox -->
+          <div class="form-group" style="margin-top: 14px; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 8px;">
+            <input type="checkbox" id="wizardConsent" class="form-check-input" checked required style="margin-top: 3px; accent-color: var(--color-primary-blue); width: 16px; height: 16px; cursor: pointer; flex-shrink: 0;">
+            <label for="wizardConsent" style="font-size: 0.78rem; line-height: 1.4; color: var(--color-text-muted); cursor: pointer; margin-bottom: 0;">
+              I authorize <strong>Loan81</strong> and partner financial institutions to contact me via Call, SMS, WhatsApp, or Email regarding my loan enquiry. I accept the <a href="privacy-policy.html" target="_blank" style="color: var(--color-primary-blue); text-decoration: underline;">Privacy Policy</a> & <a href="terms-conditions.html" target="_blank" style="color: var(--color-primary-blue); text-decoration: underline;">Terms</a>.
+            </label>
+          </div>
+
+          <div style="display: flex; gap: 12px; margin-top: 18px;">
             <button type="button" class="btn btn-secondary wizard-prev-btn" style="flex: 1;">Back</button>
             <button type="submit" class="btn btn-primary" style="flex: 2;">
               <i class="fa-solid fa-check"></i> Submit Inquiry
@@ -1515,6 +1706,6 @@
   </div>
 
   <!-- Master JavaScript -->
-  <script src="js/main.js?v=3.1"></script>
+  <script src="js/main.js?v=3.2"></script>
 </body>
 </html>
