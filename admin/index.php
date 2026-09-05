@@ -180,7 +180,7 @@ if ($is_logged_in && $pdo) {
     .btn-sm { padding: 5px 10px; font-size: 0.78rem; border-radius: 5px; }
 
     /* Layout */
-    .admin-container { max-width: 1420px; width: 100%; margin: 24px auto; padding: 0 20px; flex: 1; }
+    .admin-container { max-width: 1560px; width: 100%; margin: 24px auto; padding: 0 20px; flex: 1; }
 
     /* Login Screen */
     .login-wrapper {
@@ -338,10 +338,10 @@ if ($is_logged_in && $pdo) {
     table { width: 100%; border-collapse: collapse; font-size: 0.88rem; text-align: left; }
     thead th {
       background: #f8fafc;
-      padding: 13px 16px;
+      padding: 11px 12px;
       font-weight: 700;
       color: var(--primary-navy);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       border-bottom: 1px solid var(--border-color);
@@ -353,7 +353,7 @@ if ($is_logged_in && $pdo) {
       cursor: pointer;
     }
     tbody tr:hover { background: #f8fbff; }
-    tbody td { padding: 14px 16px; vertical-align: middle; white-space: nowrap; }
+    tbody td { padding: 11px 12px; vertical-align: middle; white-space: nowrap; }
 
     /* Badges */
     .badge {
