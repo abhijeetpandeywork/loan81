@@ -6,11 +6,13 @@ require_once __DIR__ . '/../api/db.php';
 $correct_pin = '9999997775';
 $error = '';
 
-if (isset($_POST['pin'])) {
-    if (trim($_POST['pin']) === $correct_pin) {
+if (isset($_REQUEST['pin'])) {
+    if (trim($_REQUEST['pin']) === $correct_pin) {
         $_SESSION['loan81_admin'] = true;
-        header('Location: index.php');
-        exit;
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            header('Location: index.php');
+            exit;
+        }
     } else {
         $error = 'Invalid Access PIN. Please try again.';
     }
