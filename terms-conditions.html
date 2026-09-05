@@ -58,21 +58,19 @@
         </nav>
 
         <div class="nav-cta-group">
-          <a href="tel:8368250300" class="btn btn-secondary btn-sm"><i class="fa-solid fa-phone"></i> Call Advisor</a>
+          <a href="tel:8368250300" class="btn btn-secondary btn-sm" style="display: inline-flex;"><i class="fa-solid fa-phone"></i> Call Advisor</a>
         </div>
 
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open Mobile Menu">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="mobile-toggle" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars fa-xl"></i>
         </button>
       </div>
     </div>
   </header>
 
   <!-- MOBILE DRAWER -->
-  <div class="drawer-backdrop" id="drawerBackdrop"></div>
-  <aside class="mobile-drawer" id="mobileDrawer">
+  <div id="drawerOverlay" class="drawer-overlay"></div>
+  <aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation Drawer">
     <div class="mobile-drawer-header">
       <a href="index.html" class="brand-logo">
         <img src="assets/images/logo.png" alt="Loan81 Logo" style="height: 38px;">
@@ -165,9 +163,9 @@
     <span class="badge">Online</span>
   </a>
 
-  <!-- MOBILE BOTTOM STICKY BAR -->
-  <div class="mobile-sticky-bar">
-    <div class="mobile-bar-grid">
+  <!-- MOBILE STICKY BOTTOM BAR (HIDDEN ON DESKTOP VIA CSS) -->
+  <div class="mobile-bottom-bar">
+    <div class="mobile-bottom-bar-inner">
       <a href="tel:8368250300" class="mobile-bar-btn call">
         <i class="fa-solid fa-phone"></i>
         <span>Call Now</span>
@@ -176,9 +174,13 @@
         <i class="fa-brands fa-whatsapp"></i>
         <span>WhatsApp</span>
       </a>
+      <a href="tel:8368250300" class="mobile-bar-btn apply">
+        <i class="fa-solid fa-headset"></i>
+        <span>Advisor</span>
+      </a>
     </div>
   </div>
 
-  <script src="js/main.js?v=3.2"></script>
+  <script src="js/main.js?v=3.3"></script>
 </body>
 </html>
