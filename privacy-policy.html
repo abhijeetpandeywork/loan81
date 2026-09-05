@@ -247,34 +247,169 @@
     </div>
   </header>
 
-  <!-- MOBILE DRAWER -->
+  <!-- MOBILE OFF-CANVAS DRAWER -->
   <div id="drawerOverlay" class="drawer-overlay"></div>
   <aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation Drawer">
-    <div class="mobile-drawer-header">
-      <a href="index.html" class="brand-logo">
-        <img src="assets/images/logo.png" alt="Loan81 Logo" style="height: 38px;">
+    <!-- Drawer Header -->
+    <div class="drawer-header">
+      <a href="index.html" class="drawer-logo" title="Loan81 Home">
+        <img src="assets/images/logo.png" alt="Loan81 Logo">
       </a>
-      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+      <button id="drawerCloseBtn" class="drawer-close-btn" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
-    <div class="mobile-drawer-body">
-      <nav class="mobile-nav-links">
-        <a href="index.html" class="mobile-nav-item"><i class="fa-solid fa-house"></i> Home</a>
-        <a href="about.html" class="mobile-nav-item"><i class="fa-solid fa-circle-info"></i> About Us</a>
-        <a href="services.html" class="mobile-nav-item"><i class="fa-solid fa-hand-holding-dollar"></i> Loan Products</a>
-        <a href="calculator.html" class="mobile-nav-item"><i class="fa-solid fa-calculator"></i> EMI Calculator</a>
-        <a href="contact.html" class="mobile-nav-item"><i class="fa-solid fa-address-book"></i> Contact Us</a>
-        <a href="privacy-policy.html" class="mobile-nav-item active"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a>
-        <a href="terms-conditions.html" class="mobile-nav-item"><i class="fa-solid fa-file-contract"></i> Terms & Conditions</a>
-      </nav>
-      <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.15);">
-        <a href="tel:8368250300" class="drawer-contact-btn phone">
-          <i class="fa-solid fa-phone"></i>
-          <span>Call: +91 8368250300</span>
-        </a>
-        <a href="https://wa.me/918368250300?text=Hello%20Loan81!%20I%20have%20a%20query%20about%20your%20services." target="_blank" rel="noopener" class="drawer-contact-btn whatsapp" style="margin-top: 10px;">
+
+    <!-- Drawer Body (Scrollable) -->
+    <div class="drawer-body">
+      <!-- 1. Advisor Live Status Card with Background Mesh Graphic -->
+      <div class="drawer-advisor-card">
+        <div class="drawer-advisor-avatar">
+          <img src="assets/images/hero-advisor.jpg" alt="Loan81 Senior Financial Advisor" loading="lazy">
+          <span class="online-indicator" title="Online now"></span>
+        </div>
+        <div class="drawer-advisor-info">
+          <div class="name">Loan81 Advisory Desk <i class="fa-solid fa-circle-check" style="color: #04C398; font-size: 0.75rem;"></i></div>
+          <div class="status"><span class="pulse-dot"></span> Online • Free Guidance</div>
+        </div>
+        <a href="https://wa.me/918368250300?text=Hello%20Loan81!%20I%20need%20expert%20loan%20guidance." target="_blank" rel="noopener" class="drawer-advisor-btn" title="Chat on WhatsApp">
           <i class="fa-brands fa-whatsapp"></i>
-          <span>WhatsApp Advisor</span>
         </a>
+      </div>
+
+      <!-- 2. Mini App-Style Quick Actions -->
+      <div class="drawer-quick-actions-row">
+        <a href="index.html#apply-now" class="drawer-action-tile">
+          <i class="fa-solid fa-bolt"></i>
+          <span>Check Eligibility</span>
+          <small>60 Secs</small>
+        </a>
+        <a href="calculator.html" class="drawer-action-tile">
+          <i class="fa-solid fa-calculator"></i>
+          <span>EMI Calculator</span>
+          <small>Instant</small>
+        </a>
+      </div>
+
+      <!-- 3. Main Navigation Links with Icons -->
+      <div class="drawer-nav-section">
+        <div class="drawer-section-title">Navigation</div>
+        <ul class="drawer-nav-list">
+          <li>
+            <a href="index.html" class="drawer-nav-link">
+              <span class="drawer-nav-icon"><i class="fa-solid fa-house"></i></span>
+              <span class="drawer-nav-text">Home</span>
+              <i class="fa-solid fa-chevron-right drawer-chevron"></i>
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="drawer-nav-link">
+              <span class="drawer-nav-icon"><i class="fa-solid fa-circle-info"></i></span>
+              <span class="drawer-nav-text">About Us</span>
+              <i class="fa-solid fa-chevron-right drawer-chevron"></i>
+            </a>
+          </li>
+          <li>
+            <a href="services.html" class="drawer-nav-link">
+              <span class="drawer-nav-icon"><i class="fa-solid fa-layer-group"></i></span>
+              <span class="drawer-nav-text">Loan Products</span>
+              <span class="drawer-badge">40+ Banks</span>
+              <i class="fa-solid fa-chevron-right drawer-chevron"></i>
+            </a>
+          </li>
+          <li>
+            <a href="calculator.html" class="drawer-nav-link">
+              <span class="drawer-nav-icon"><i class="fa-solid fa-calculator"></i></span>
+              <span class="drawer-nav-text">EMI Calculator</span>
+              <span class="drawer-badge teal">Live Tool</span>
+              <i class="fa-solid fa-chevron-right drawer-chevron"></i>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="drawer-nav-link">
+              <span class="drawer-nav-icon"><i class="fa-solid fa-headset"></i></span>
+              <span class="drawer-nav-text">Contact Us</span>
+              <i class="fa-solid fa-chevron-right drawer-chevron"></i>
+            </a>
+          </li>
+          <li>
+            <a href="privacy-policy.html" class="drawer-nav-link active">
+              <span class="drawer-nav-icon"><i class="fa-solid fa-shield-halved"></i></span>
+              <span class="drawer-nav-text">Privacy Policy</span>
+              <i class="fa-solid fa-chevron-right drawer-chevron"></i>
+            </a>
+          </li>
+          <li>
+            <a href="terms-conditions.html" class="drawer-nav-link">
+              <span class="drawer-nav-icon"><i class="fa-solid fa-file-contract"></i></span>
+              <span class="drawer-nav-text">Terms & Conditions</span>
+              <i class="fa-solid fa-chevron-right drawer-chevron"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 4. Quick Loan Categories Chips with Rate Info -->
+      <div class="drawer-quick-products">
+        <div class="drawer-section-title">Popular Loan Services</div>
+        <div class="drawer-product-chips">
+          <a href="services.html#home" class="drawer-chip">
+            <i class="fa-solid fa-house-chimney"></i>
+            <div>
+              <span>Home Loan</span>
+              <small>From 8.40%</small>
+            </div>
+          </a>
+          <a href="services.html#personal" class="drawer-chip">
+            <i class="fa-solid fa-user-shield"></i>
+            <div>
+              <span>Personal Loan</span>
+              <small>From 10.49%</small>
+            </div>
+          </a>
+          <a href="services.html#business" class="drawer-chip">
+            <i class="fa-solid fa-briefcase"></i>
+            <div>
+              <span>Business Loan</span>
+              <small>Up to ₹1 Cr</small>
+            </div>
+          </a>
+          <a href="services.html#lap" class="drawer-chip">
+            <i class="fa-solid fa-building"></i>
+            <div>
+              <span>Loan vs Property</span>
+              <small>Lowest EMI</small>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. High-Impact CTA Banner Card with Watermark Graphic -->
+      <div class="drawer-cta-banner">
+        <div class="drawer-cta-tag"><i class="fa-solid fa-bolt"></i> FAST IN-PRINCIPLE APPROVAL</div>
+        <h4>Compare 40+ Premier Banks & NBFCs</h4>
+        <p>Get customized loan offers at lowest interest rates with 100% zero upfront charges.</p>
+        <a href="index.html#apply-now" class="btn btn-primary btn-block">
+          Check Instant Eligibility <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- 6. Quick Direct Contact Box & Office Details -->
+      <div class="drawer-contact-box">
+        <div class="drawer-section-title">Immediate Advisor Help</div>
+        <div class="drawer-contact-btns">
+          <a href="tel:8368250300" class="drawer-contact-btn phone">
+            <i class="fa-solid fa-phone"></i>
+            <span>Call: +91 8368250300</span>
+          </a>
+          <a href="https://wa.me/918368250300?text=Hello%20Loan81!%20I%20need%20quick%20loan%20guidance." target="_blank" rel="noopener" class="drawer-contact-btn whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp Senior Advisor</span>
+          </a>
+        </div>
+        <div class="drawer-office-note">
+          <i class="fa-solid fa-location-dot"></i> A-1/1, Rama Park, Dwarka Mor, New Delhi 110059
+        </div>
       </div>
     </div>
   </aside>
