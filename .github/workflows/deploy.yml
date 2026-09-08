@@ -6,13 +6,41 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  deploy_production:
+    name: Deploy to Production (loan81.com)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy to Hostinger via SSH
+      - name: Deploy to Production via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 195.35.44.93
+          port: 65002
+          username: u878958741
+          password: ${{ secrets.HOSTINGER_PROD_SSH_PASSWORD }}
+          script: |
+            cd /home/u878958741/domains/loan81.com/public_html
+            rm -f default.php
+            git config --global --add safe.directory /home/u878958741/domains/loan81.com/public_html
+            if [ -d .git ]; then
+              git fetch origin main
+              git reset --hard origin/main
+            else
+              git clone https://${{ secrets.GH_PAT }}@github.com/abhijeetpandeywork/loan81.git .
+            fi
+            chmod -R 755 .
+            echo "Loan81 deployed to loan81.com successfully!"
+
+  deploy_staging:
+    name: Deploy to Staging (loft.digitalrubix.site)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Staging via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: 147.93.23.184
@@ -30,3 +58,5 @@ jobs:
             fi
             chmod -R 755 .
             echo "Loan81 deployed to loft.digitalrubix.site successfully!"
+
+
